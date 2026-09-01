@@ -2,12 +2,15 @@
 
 {
   imports = [
-    ./xdg.nix
+    inputs.home-manager.nixosModules.home-manager
   ];
 
-  inputs.home-manager.nixosModules.home-manager = {
+  home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
+    sharedModules = [
+      ./modules
+    ];
   };
 }
