@@ -22,6 +22,7 @@ in
   programs.mangohud = {
     enable = true;
   };
+
   home.packages = with pkgs; [
     dwproton-bin.steamcompattool
     discord

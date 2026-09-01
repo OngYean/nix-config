@@ -6,6 +6,11 @@
 {
   imports = [
     ../../modules/common
+    ../../modules/apps.nix
+    ../../modules/fonts.nix
+    ../../modules/gaming.nix
+    ../../modules/services.nix
+    ../../modules/tweaks.nix
     ../../modules/hardware/amd.nix
     ../../modules/hardware/amdgpu.nix
     ../../modules/hardware/nvidia-prime.nix
@@ -14,6 +19,9 @@
   ];
 
   networking.hostName = "ongyean-laptop"; # Define your hostname.
+
+  # Absolutely proprietary
+  nixpkgs.config.allowUnfree = true;
 
   # Unlock the LUKS2 container first so that the partitions can mount
   boot.initrd.luks.devices."nixos" = {
