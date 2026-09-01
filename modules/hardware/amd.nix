@@ -13,7 +13,7 @@
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
-      ExecStart = "${pkgs.ryzenadj}/bin/ryzenadj --stapm-limit=45000 --fast-limit=55000 --slow-limit=45000";
+      ExecStart = "${pkgs.ryzenadj}/bin/ryzenadj --stapm-limit=35000 --fast-limit=45000 --slow-limit=35000 --tctl-temp=90";
     };
   };
 
@@ -23,7 +23,7 @@
     wantedBy = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "${pkgs.ryzenadj}/bin/ryzenadj --stapm-limit=45000 --fast-limit=55000 --slow-limit=45000";
+      ExecStart = "${pkgs.ryzenadj}/bin/ryzenadj --stapm-limit=35000 --fast-limit=45000 --slow-limit=35000 --tctl-temp=90";
     };
   };
 }
