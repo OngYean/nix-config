@@ -1,7 +1,13 @@
 { pkgs, ... }:
 
 {
-  programs.zsh = {
+  programs = {
+    noctalia = {
+      enable = true;
+      systemd.enable = true;
+    };
+
+    zsh = {
       enable = true;
       autosuggestion.enable = true;
       defaultKeymap = "viins";
@@ -9,7 +15,7 @@
       oh-my-zsh.enable = true;
     };
 
-    programs.zed-editor = {
+    zed-editor = {
       enable = true;
       extensions = [
         "nix"
@@ -35,5 +41,5 @@
         vim_mode = true;
       };
     };
-
+  };
 }

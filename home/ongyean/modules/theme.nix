@@ -25,6 +25,10 @@
     size = 32;
   };
 
+  home.packages = with pkgs; [
+    darkly
+  ];
+
   gtk = {
     enable = true;
     theme = {
@@ -49,10 +53,36 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "gtk3"; # Lets Qt pick up GTK colors and icons
-    style = {
-      name = "adwaita-dark";
-      package = pkgs.adwaita-qt;
+    platformTheme.name = "qtct"; # Lets Qt pick up GTK colors and icons
+    #style = {
+    #  name = "adwaita-dark";
+    #  package = pkgs.adwaita-qt;
+    #};
+    qt5ctSettings = {
+      Appearance = {
+        icon_theme = "WhiteSur-dark";
+        standard_dialogs = "xdgdesktopportal";
+        style = "darkly";
+        custom_palette = true;
+        color_scheme_path="/home/ongyean/.config/qt5ct/colors/noctalia.conf";
+      };
+      Fonts = {
+        fixed = "\"JetBrains Mono,10\"";
+        general = "\"Inter,10\"";
+      };
+    };
+    qt6ctSettings = {
+      Appearance = {
+        icon_theme = "WhiteSur-dark";
+        standard_dialogs = "xdgdesktopportal";
+        style = "darkly";
+        custom_palette = true;
+        color_scheme_path="/home/ongyean/.config/qt6ct/colors/noctalia.conf";
+      };
+      Fonts = {
+        fixed = "\"JetBrains Mono,10\"";
+        general = "\"Inter,10\"";
+      };
     };
   };
 
