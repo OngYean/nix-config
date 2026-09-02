@@ -15,6 +15,9 @@
   };
 
   home-manager.users.ongyean = {
+    imports = [
+      ./modules
+    ];
     home.username = "ongyean";
     home.homeDirectory = "/home/ongyean";
 

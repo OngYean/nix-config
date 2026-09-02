@@ -3,9 +3,9 @@
 
 {
   programs = {
-    # Desktop experience must-haves - Hyprland WM and Noctalia v5 shell
+    # Desktop experience must-haves - Hyprland WM
     hyprland.enable = true;
-    noctalia.enable = true;
+    hyprland.withUWSM = true;
 
     # Basic dev setup
     zsh.enable = true;
