@@ -1,8 +1,8 @@
-{ inputs, ... }:
+{ pkgs, ... }:
 
 {
-  nix.settings.substituters = [ "https://attic.xuyh0120.win/lantian" ];
-  nix.settings.trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
+  #nix.settings.substituters = [ "https://attic.xuyh0120.win/lantian" ];
+  #nix.settings.trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
 
   boot = {
     # Use systemd-boot as the boot loader
@@ -16,10 +16,10 @@
     #nixpkgs.overlays = [
     #  inputs.nix-cachyos-kernel.overlays.pinned
     #];
-    kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.x86_64-linux.linuxPackages-cachyos-latest-lto-x86_64-v3;
+    #kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.x86_64-linux.linuxPackages-cachyos-latest-lto-x86_64-v3;
 
     # Uncomment this for mainstream Linux kernel
-    #boot.kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
 
     kernelModules = [ "ntsync" ];
 

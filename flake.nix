@@ -5,9 +5,9 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     #chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    #nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
-  outputs = inputs@{ self, nixpkgs, home-manager, nix-cachyos-kernel, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
     nixosConfigurations."ongyean-laptop" = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
