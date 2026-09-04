@@ -42,4 +42,12 @@
       };
     };
   };
+
+  # User packages
+  home.packages = with pkgs; [
+    xournalpp
+    vlc
+  ];
+
+  # Desktop entry overrides
 }

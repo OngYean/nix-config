@@ -49,6 +49,5 @@
     kdePackages.ark
     brave-origin
     restic
-    vlc
   ];
 }
