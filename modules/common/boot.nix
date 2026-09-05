@@ -19,9 +19,8 @@
     #kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.x86_64-linux.linuxPackages-cachyos-latest-lto-x86_64-v3;
 
     # Uncomment this for mainstream Linux kernel
-    kernelPackages = pkgs.linuxPackages_latest;
-
-    kernelModules = [ "ntsync" ];
+    # kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_cachyos;
 
     # Plymouth boot screen
     plymouth = {

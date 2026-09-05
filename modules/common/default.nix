@@ -9,11 +9,6 @@
     ./networking.nix
     ./power-management.nix
   ];
-
-  nix.settings = {
-    experimental-features = "nix-command flakes";
-  };
-
   # Nix garbage collection settings
   nix.gc = {
     automatic = true;

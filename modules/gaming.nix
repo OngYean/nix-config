@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  boot.kernelModules = [ "ntsync" ];
+
   programs.steam = {
     enable = true;
     extraCompatPackages = with pkgs; [

@@ -57,7 +57,9 @@
     "fs.file-max" = 2097152;
   };
 
-  services.journald.extraConfig = "[Journal]\nSystemMaxUse=50M";
+  services.journald.settings.Journal = {
+    SystemMaxUse = "50M";
+  };
 
   # systemd/system.conf.d,system,timesyncd.conf.d,user.conf.d skipped
 
