@@ -7,6 +7,7 @@
     # package = config.boot.kernelPackages.nvidiaPackages.latest;
     package = pkgs.nvidia_cachyos;
     modesetting.enable = true;
+    powerManagement.enable = true;
   };
 
   # Undervolt time

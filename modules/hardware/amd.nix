@@ -13,7 +13,7 @@
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
-      ExecStart = "${pkgs.ryzenadj}/bin/ryzenadj --stapm-limit=35000 --fast-limit=45000 --slow-limit=35000 --tctl-temp=90";
+      ExecStart = "${pkgs.ryzenadj}/bin/ryzenadj --stapm-limit=30000 --fast-limit=40000 --slow-limit=30000 --tctl-temp=85";
     };
   };
 
