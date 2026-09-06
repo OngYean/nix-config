@@ -1,7 +1,7 @@
 # Host: ongyean-laptop
 # The LUKS2 container should be named "nixos"
 # and the boot partition should be labelled "boot"
-{ lib, ... }:
+{ lib, inputs, ... }:
 
 {
   imports = [
@@ -9,6 +9,7 @@
     ../../modules/apps.nix
     ../../modules/fonts.nix
     ../../modules/gaming.nix
+    ../../modules/secure-boot.nix
     ../../modules/services.nix
     ../../modules/tweaks.nix
     ../../modules/hardware/amd.nix
@@ -16,6 +17,7 @@
     ../../modules/hardware/nvidia-prime.nix
     ../../home/ongyean
     ./hardware-configuration.nix
+    inputs.chaotic.nixosModules.default
   ];
 
   networking.hostName = "ongyean-laptop"; # Define your hostname.
