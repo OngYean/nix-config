@@ -10,7 +10,7 @@
   users.users."ongyean" = {
     isNormalUser = true;
     description = "Ong Yean";
-    extraGroups = [ "wheel" "networkmanager" "audio" ];
+    extraGroups = [ "wheel" "networkmanager" "audio" "gamemode" ];
     shell = pkgs.zsh;
   };
 
