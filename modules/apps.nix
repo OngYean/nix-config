@@ -49,5 +49,7 @@
     kdePackages.ark
     brave-origin
     restic
+    btop
+    resources
   ];
 }
