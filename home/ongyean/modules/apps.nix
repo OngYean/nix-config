@@ -24,11 +24,6 @@
         nixd
         nil
       ];
-      mutableUserDebug = false;
-      mutableUserKeymaps = false;
-      mutableUserSettings = false;
-      mutableUserTasks = false;
-      #themes = "${home.homeDirectory}/.config/zed/themes/"
       userSettings = {
         buffer_font_size = 13;
         features = {
