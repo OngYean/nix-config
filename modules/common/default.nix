@@ -9,11 +9,14 @@
     ./networking.nix
     ./power-management.nix
   ];
+
+  nix.settings.experimental-features = [ "flakes" ];
+
   # Nix garbage collection settings
   nix.gc = {
     automatic = true;
-    dates = "*-*-* 21:00:00";
-    options = "--delete-older-than 3d";
+    dates = "weekly";
+    options = "--delete-older-than +8";
   };
 
   # NEVER CHANGE THIS
