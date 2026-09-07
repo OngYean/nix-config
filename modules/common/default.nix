@@ -10,7 +10,7 @@
     ./power-management.nix
   ];
 
-  nix.settings.experimental-features = [ "flakes" ];
+  nix.settings.experimental-features = [ "flakes" "nix-command" ];
 
   # Nix garbage collection settings
   nix.gc = {
