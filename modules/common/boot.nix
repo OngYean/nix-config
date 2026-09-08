@@ -22,6 +22,12 @@
     # kernelPackages = pkgs.linuxPackages_latest;
     kernelPackages = pkgs.linuxPackages_cachyos;
 
+    kernelParams = [
+      "quiet"
+      "nowatchdog"
+      "splash"
+    ];
+
     # Plymouth boot screen
     plymouth = {
       enable = true;
