@@ -21,6 +21,12 @@ in
 {
   programs.mangohud = {
     enable = true;
+    settings = {
+      full = true; # Show full information
+      font_file = "${pkgs.inter}/share/fonts/truetype/InterVariable.ttf"; # Use Inter font
+      round_corners = 12;
+      no_display = true; # Hide the HUD by default
+    };
   };
 
   home.packages = with pkgs; [
