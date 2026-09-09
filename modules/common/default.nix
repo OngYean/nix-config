@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ./audio.nix
     ./bluetooth.nix
     ./boot.nix
     ./locale.nix
     ./networking.nix
+    ./pipewire.nix
     ./power-management.nix
   ];
 
