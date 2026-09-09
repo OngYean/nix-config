@@ -73,6 +73,12 @@
   # Required for Wine to work
   hardware.graphics.enable32Bit = true;
 
+  # Allows for low-latency audio
+  security.pam.loginLimits = [
+    { domain = "@audio"; item = "rtprio"; type = "-"; value = "99"; }
+    { domain = "@audio"; item = "nice";   type = "-"; value = "-11"; }
+  ];
+
   # Custom SCX CPU scheduler
   services.scx = {
     enable = true;
