@@ -22,7 +22,7 @@ in
   programs.mangohud = {
     enable = true;
     settings = {
-      full = true; # Show full information
+      preset = 2; # Show horizontal overlay
       font_file = "${pkgs.inter}/share/fonts/truetype/InterVariable.ttf"; # Use Inter font
       round_corners = 12;
       no_display = true; # Hide the HUD by default
