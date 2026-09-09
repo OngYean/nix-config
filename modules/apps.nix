@@ -47,6 +47,7 @@
     kdePackages.dolphin-plugins
     kdePackages.filelight
     kdePackages.ark
+    kdePackages.partitionmanager
     brave-origin
     restic
     btop
