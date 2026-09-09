@@ -1,0 +1,22 @@
+{
+  "theme": {
+    "colorScheme": "/home/ongyean/.local/share/color-schemes/noctalia.colors",
+    "iconTheme": "MacTahoe-dark",
+    "style": "Darkly",
+    "font": {
+      "family": "Inter",
+      "size": 10,
+      "weight": 500
+    },
+    "fontFixed": {
+      "family": "JetBrainsMono Nerd Font",
+      "size": 10,
+      "weight": -1
+    }
+  },
+  "misc": {
+    "menusHaveIcons": true,
+    "singleClickActivate": false,
+    "shortcutsForContextMenus": true
+  }
+}

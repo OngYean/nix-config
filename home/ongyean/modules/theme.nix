@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   # home.activation.installIconTheme = config.lib.dag.entryAfter ["writeBoundary"] ''
@@ -26,8 +26,14 @@
   };
 
   home.packages = with pkgs; [
+    qtengine
     darkly
   ];
+
+  # Injects qtengine as Qt theme
+  home.sessionVariables = {
+    QT_QPA_PLATFORMTHEME = "qtengine";
+  };
 
   gtk = {
     enable = true;
@@ -48,41 +54,6 @@
     };
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = true;
-    };
-  };
-
-  qt = {
-    enable = true;
-    platformTheme.name = "qtct"; # Lets Qt pick up GTK colors and icons
-    #style = {
-    #  name = "adwaita-dark";
-    #  package = pkgs.adwaita-qt;
-    #};
-    qt5ctSettings = {
-      Appearance = {
-        icon_theme = "WhiteSur-dark";
-        standard_dialogs = "xdgdesktopportal";
-        style = "darkly";
-        custom_palette = true;
-        color_scheme_path="/home/ongyean/.config/qt5ct/colors/noctalia.conf";
-      };
-      Fonts = {
-        fixed = "\"JetBrains Mono,10\"";
-        general = "\"Inter,10\"";
-      };
-    };
-    qt6ctSettings = {
-      Appearance = {
-        icon_theme = "WhiteSur-dark";
-        standard_dialogs = "xdgdesktopportal";
-        style = "darkly";
-        custom_palette = true;
-        color_scheme_path="/home/ongyean/.config/qt6ct/colors/noctalia.conf";
-      };
-      Fonts = {
-        fixed = "\"JetBrains Mono,10\"";
-        general = "\"Inter,10\"";
-      };
     };
   };
 
