@@ -34,22 +34,41 @@
       };
     };
 
+    # KDE Partition Manager
+    partition-manager.enable = true;
+
+    # KDE Connect
+    kdeconnect.enable = true;
+
     # An app to manage GNOME keyring credentials
     seahorse.enable = true;
   };
 
-  # You can use https://search.nixos.org/ to find more packages (and options).
+  # Curated packages enforced for all users to ensure basic functionality
   environment.systemPackages = with pkgs; [
     wget
     alacritty
     fastfetch
+
+    # System utilities
+    kdePackages.filelight
+    restic
+
+    # File manager
     kdePackages.dolphin
     kdePackages.dolphin-plugins
-    kdePackages.filelight
     kdePackages.ark
-    kdePackages.partitionmanager
+
+    # Document and media viewers
+    libreoffice
+    kdePackages.okular
+    kdePackages.koko
+    vlc
+
+    # Web browser
     brave-origin
-    restic
+
+    # System monitoring tools
     btop
     resources
   ];

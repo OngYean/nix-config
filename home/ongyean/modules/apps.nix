@@ -40,8 +40,15 @@
 
   # User packages
   home.packages = with pkgs; [
+    # Document and multimedia apps
+    audacity
+    video-trimmer
+    obs-studio
     xournalpp
-    vlc
+
+    # Social apps
+    discord
+    telegram-desktop
   ];
 
   # Desktop entry overrides

@@ -4,11 +4,11 @@ let
   customGameBin = { name, exePath, env ? {}, prefix ? "mangohud gamemoderun", protonPkg ? pkgs.dwproton-bin }:
     let
       envVars = {
+        # Common defaults
         GAMEID = name;
         PROTONPATH = "${protonPkg.steamcompattool}";
         __GL_SHADER_DISK_CACHE_PATH = "${config.home.homeDirectory}/.cache/nvidia";
-        # common defaults
-      } // env;  # merge game-specific overrides
+      } // env;  # Merge game-specific overrides
 
       envStr = builtins.concatStringsSep "\n"
         (lib.mapAttrsToList (k: v: "export ${k}=${toString v}") envVars);
@@ -29,9 +29,21 @@ in
   };
 
   home.packages = with pkgs; [
+    # Compatibility tools
     dwproton-bin.steamcompattool
-    discord
 
+    # Games
+    osu-lazer-bin
+    prismlauncher
+
+    # Custom desktop entries for Proton games
+    # ===========================
+    # ===== How to install? =====
+    # ===========================
+    # 1. Confirm the GAMEID (umu-yourgame), WINEPREFIX will default to $HOME/Games/umu/GAMEID and it doesn't have to be set
+    # 2. Confirm the PROTONPATH, use `nix eval --raw nixpkgs#pkgs.yourproton.steamcompattool` to find it
+    # 3. Run `GAMEID=<GAMEID> PROTONPATH=<PROTONPATH> umu-run <path to exe>`
+    # Step 3 can be used for the game installer, launcher and other Windows utilities
     (customGameBin {
       name = "umu-genshin";
       exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/Unlocker/unlockfps_nc.exe";
@@ -68,6 +80,9 @@ in
       exec = "umu-genshin";
       icon = "genshin-impact";
       categories = [ "Game" ];
+      settings = {
+        StartupWMClass = "steam_app_genshin";
+      };
     };
 
     honkai-star-rail = {
@@ -75,6 +90,9 @@ in
       exec = "umu-starrail";
       icon = "honkai-star-rail";
       categories = [ "Game" ];
+      settings = {
+        StartupWMClass = "steam_app_starrail";
+      };
     };
 
     neverness-to-everness = {
@@ -82,6 +100,9 @@ in
       exec = "umu-nte";
       icon = "neverness-to-everness";
       categories = [ "Game" ];
+      settings = {
+        StartupWMClass = "steam_app_nte";
+      };
     };
   };
 }
