@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   programs = {
@@ -45,4 +45,15 @@
   ];
 
   # Desktop entry overrides
+  xdg.desktopEntries = {
+    "dev.noctalia.Noctalia" = {
+      name = "System Settings";
+      comment = "System settings for Noctalia shell";
+      exec = "${config.programs.noctalia.package}/bin/noctalia msg settings-open";
+      icon = "preferences-system";
+      terminal = false;
+      categories = [ "Settings" "DesktopSettings" ];
+      startupNotify = false;
+    };
+  };
 }
