@@ -43,5 +43,5 @@ in
 
   # Link dotfiles to the real locations
   xdg.configFile = mkLinks dotfilesConfig;
-  xdg.dataFile   = mkLinks dotfilesData;
+  # xdg.dataFile   = mkLinks dotfilesData;
 }

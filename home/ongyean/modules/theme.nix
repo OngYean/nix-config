@@ -13,6 +13,7 @@
   home.packages = with pkgs; [
     qtengine
     darkly
+    callPackage ../../../pkgs/custom-icons {}
   ];
 
   # Injects qtengine as Qt theme

@@ -24,7 +24,6 @@ in
     settings = {
       preset = 2; # Show horizontal overlay
       font_file = "${pkgs.inter}/share/fonts/truetype/InterVariable.ttf"; # Use Inter font
-      round_corners = 12;
       no_display = true; # Hide the HUD by default
     };
   };
@@ -32,6 +31,7 @@ in
   home.packages = with pkgs; [
     dwproton-bin.steamcompattool
     discord
+
     (customGameBin {
       name = "umu-genshin";
       exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/Unlocker/unlockfps_nc.exe";
@@ -73,14 +73,14 @@ in
     honkai-star-rail = {
       name = "Honkai: Star Rail";
       exec = "umu-starrail";
-      icon = "star-rail";
+      icon = "honkai-star-rail";
       categories = [ "Game" ];
     };
 
     neverness-to-everness = {
       name = "Neverness To Everness";
       exec = "umu-nte";
-      icon = "nte";
+      icon = "neverness-to-everness";
       categories = [ "Game" ];
     };
   };
