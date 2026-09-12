@@ -5,6 +5,9 @@
   # Default choice of display manager
   services.displayManager.noctalia-greeter.enable = true;
 
+  # Enable OpenTabletDriver
+  hardware.opentabletdriver.enable = true;
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
