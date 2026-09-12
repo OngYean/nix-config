@@ -48,4 +48,8 @@
       gtk-theme = "adw-gtk3-dark";
     };
   };
+
+  qt.kde.settings = {
+    kdeglobals.Icons.Theme = "MacTahoe-dark";
+  };
 }
