@@ -1,5 +1,5 @@
 # Darwin Plymouth theme
-{ stdenvNoCC, fetchFromGitHub }:
+{ lib, stdenvNoCC, fetchFromGitHub }:
 
 stdenvNoCC.mkDerivation rec {
   pname = "darwin-plymouth";
@@ -20,4 +20,11 @@ stdenvNoCC.mkDerivation rec {
           --replace-fail "/usr/" "$out/"
     runHook postInstall
   '';
+
+  meta = {
+    description = "Darwin Plymouth";
+    homepage = "https://github.com/libredeb/darwin-plymouth";
+    license = lib.licenses.gpl3Plus;
+    platforms = lib.platforms.linux;
+  };
 }

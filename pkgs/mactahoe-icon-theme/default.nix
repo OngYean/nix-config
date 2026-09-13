@@ -37,7 +37,7 @@ lib.checkListOfEnum "${pname}: theme variants"
       owner = "vinceliuice";
       repo = "MacTahoe-icon-theme";
       tag = version;
-      hash = "sha256-5MN1iza+xPcW18DSbaxVNPdbvY9JwB/Ravk1HnK8Djw=";
+      hash = "sha256-NAahlBOYub0QlqkYStamoCbyWh+H5JG/iFm4Ws9EU3A=";
     };
 
     nativeBuildInputs = [
@@ -80,7 +80,5 @@ lib.checkListOfEnum "${pname}: theme variants"
       homepage = "https://github.com/vinceliuice/MacTahoe-icon-theme";
       license = lib.licenses.gpl3Plus;
       platforms = lib.platforms.linux;
-      maintainers = with lib.maintainers; [ icy-thought ];
     };
-
   }
