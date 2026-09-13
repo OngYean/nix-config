@@ -50,6 +50,9 @@
     alacritty
     fastfetch
 
+    # Required for gdbus to appear in $PATH
+    glib
+
     # System utilities
     kdePackages.filelight
     restic
@@ -67,6 +70,10 @@
 
     # Web browser
     brave-origin
+
+    # Android tools
+    android-tools
+    scrcpy
 
     # System monitoring tools
     btop
