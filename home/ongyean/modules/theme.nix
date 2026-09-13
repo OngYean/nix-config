@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   home.pointerCursor = {
@@ -52,4 +52,8 @@
   qt.kde.settings = {
     kdeglobals.Icons.Theme = "MacTahoe-dark";
   };
+
+  home.activation.iconThemeSymlink = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    $DRY_RUN_CMD ln -sf ${pkgs.callPackage ../../../pkgs/mactahoe-icon-theme {}}/share/icons/MacTahoe* ${config.home.homeDirectory}/.local/share/icons/
+  '';
 }
