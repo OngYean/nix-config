@@ -7,7 +7,6 @@ let
         # Common defaults
         GAMEID = name;
         PROTONPATH = "${protonPkg.steamcompattool}";
-        __GL_SHADER_DISK_CACHE_PATH = "${config.home.homeDirectory}/.cache/nvidia";
       } // env;  # Merge game-specific overrides
 
       envStr = builtins.concatStringsSep "\n"
