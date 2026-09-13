@@ -36,6 +36,11 @@
         vim_mode = true;
       };
     };
+
+    discord = {
+      enable = true;
+      settings.SKIP_HOST_UPDATE = true;
+    };
   };
 
   # User packages
@@ -47,7 +52,6 @@
     xournalpp
 
     # Social apps
-    discord
     telegram-desktop
   ];
 
