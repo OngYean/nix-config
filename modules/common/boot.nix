@@ -9,14 +9,8 @@
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
+      timeout = 0;
     };
-
-    # Use CachyOS's LTO kernel (x86-64_v3).
-
-    #nixpkgs.overlays = [
-    #  inputs.nix-cachyos-kernel.overlays.pinned
-    #];
-    #kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.x86_64-linux.linuxPackages-cachyos-latest-lto-x86_64-v3;
 
     # Uncomment this for mainstream Linux kernel
     # kernelPackages = pkgs.linuxPackages_latest;
