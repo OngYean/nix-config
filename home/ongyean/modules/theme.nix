@@ -5,9 +5,10 @@
     enable = true;
     gtk.enable = true;
     x11.enable = true;
-    name = "WhiteSur-cursors";
-    package = pkgs.whitesur-cursors;
-    size = 32;
+    hyprcursor.enable = true;
+    name = "MacTahoe-dark-cursors";
+    package = pkgs.callPackage ../../../pkgs/mactahoe-cursors {};
+    size = 48;
   };
 
   home.packages = with pkgs; [
