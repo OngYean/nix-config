@@ -182,22 +182,6 @@
         "type": "github"
       }
     },
-    "pinnedPkgs": {
-      "locked": {
-        "lastModified": 1789006805,
-        "narHash": "sha256-xB8mKMOx1IA9vTDNLmJZ6n4wCMq/cuWBBOzGCRnqxrU=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "8ce4ef6cb6f871616146b9fe26d2a5ae594e94fe",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "8ce4ef6cb6f871616146b9fe26d2a5ae594e94fe",
-        "type": "github"
-      }
-    },
     "pre-commit": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -226,8 +210,7 @@
         "chaotic": "chaotic",
         "home-manager": "home-manager_2",
         "lanzaboote": "lanzaboote",
-        "nixpkgs": "nixpkgs_2",
-        "pinnedPkgs": "pinnedPkgs"
+        "nixpkgs": "nixpkgs_2"
       }
     },
     "rust-overlay": {
