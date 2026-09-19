@@ -22,6 +22,14 @@
     firewall = {
       enable = true;
     };
+
+    # WireGuard VPN
+    wg-quick.interfaces = {
+      wg0 = {
+        autostart = false;
+        configFile = "/var/lib/wireguard/wg0.conf";
+      };
+    };
   };
 
   services.resolved = {
