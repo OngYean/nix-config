@@ -8,7 +8,7 @@
     hyprcursor.enable = true;
     name = "MacTahoe-dark-cursors";
     package = pkgs.callPackage ../../../pkgs/mactahoe-cursors {};
-    size = 48;
+    size = 36;
   };
 
   home.packages = with pkgs; [
