@@ -20,7 +20,7 @@
     inputs.chaotic.nixosModules.default
   ];
 
-  networking.hostName = "ongyean-laptop"; # Define your hostname.
+  networking.hostName = "ongyean-laptop";
 
   # Absolutely proprietary
   nixpkgs.config.allowUnfree = true;
@@ -42,4 +42,27 @@
 
   # Specify `amdgpuBusId` as required by NVIDIA PRIME
   hardware.nvidia.prime.amdgpuBusId = "PCI:7@0:0:0";
+
+  # Device-specific GPU undervolting
+  services.lact = {
+    enable = true;
+    settings = {
+      version = 7;
+      daemon = {
+        log_level = "info";
+        admin_group = "wheel";
+        disable_clocks_cleanup = false;
+      };
+      apply_settings_timer = 5;
+      current_profile = "Undervolt";
+
+      profiles."Undervolt".gpus."10DE:25A2-103C:8A21-0000:01:00.0" = {
+        fan_control_enabled = false;
+        power_mizer_mode = "Auto";
+        min_core_clock = 210;
+        max_core_clock = 2000;
+        gpu_clock_offsets."0" = 250;
+      };
+    };
+  };
 }
