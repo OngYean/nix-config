@@ -25,6 +25,11 @@
   # Absolutely proprietary
   nixpkgs.config.allowUnfree = true;
 
+  # Device-specific workaround for Zed to use AMD GPU
+  environment.sessionVariables = {
+    ZED_DEVICE_ID = "1681";
+  };
+
   # Built-in webcam is broken on this laptop :(
   # Hence it is blocked via udev rule to avoid being waken up
   services.udev.extraRules = ''
