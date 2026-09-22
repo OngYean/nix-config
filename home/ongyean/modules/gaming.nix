@@ -1,11 +1,11 @@
 { pkgs, config, lib, ... }:
 
 let
-  customGameBin = { name, exePath, env ? {}, prefix ? "mangohud gamemoderun", protonPkg ? pkgs.dwproton-bin }:
+  customGameBin = { name, exePath, gameid ? name, env ? {}, prefix ? "mangohud gamemoderun", protonPkg ? pkgs.dwproton-bin }:
     let
       envVars = {
         # Common defaults
-        GAMEID = name;
+        GAMEID = gameid;
         PROTONPATH = "${protonPkg.steamcompattool}";
       } // env;  # Merge game-specific overrides
 
@@ -54,10 +54,29 @@ in
     })
 
     (customGameBin {
+      name = "umu-genshin-launcher";
+      gameid = "umu-genshin";
+      exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/HoYoPlay/launcher.exe";
+      env = {
+        UMU_USE_STEAM=1;
+        PROTON_DXVK_GPLASYNC=1;
+      };
+    })
+
+    (customGameBin {
       name = "umu-starrail";
       exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/HoYoPlay/games/Star Rail Games/StarRail.exe";
       env = {
         PROTON_ENABLE_WAYLAND=1;
+        PROTON_DXVK_GPLASYNC=1;
+      };
+    })
+
+    (customGameBin {
+      name = "umu-starrail-launcher";
+      gameid = "umu-starrail";
+      exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/HoYoPlay/launcher.exe";
+      env = {
         PROTON_DXVK_GPLASYNC=1;
       };
     })
@@ -82,6 +101,12 @@ in
       settings = {
         StartupWMClass = "steam_app_genshin";
       };
+
+      actions."open-launcher" = {
+        name = "Open Launcher";
+        exec = "umu-genshin-launcher";
+        icon = "genshin-impact";
+      };
     };
 
     honkai-star-rail = {
@@ -91,6 +116,12 @@ in
       categories = [ "Game" ];
       settings = {
         StartupWMClass = "steam_app_starrail";
+      };
+
+      actions."open-launcher" = {
+        name = "Open Launcher";
+        exec = "umu-starrail-launcher";
+        icon = "honkai-star-rail";
       };
     };
 
