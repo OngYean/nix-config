@@ -37,6 +37,11 @@
       };
     };
 
+    antigravity-cli = {
+      enable = true;
+      enableMcpIntegration = true;
+    };
+
     discord = {
       enable = true;
       settings.SKIP_HOST_UPDATE = true;
