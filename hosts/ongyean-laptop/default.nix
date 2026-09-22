@@ -65,8 +65,8 @@
         fan_control_enabled = false;
         power_mizer_mode = "Auto";
         min_core_clock = 210;
-        max_core_clock = 2000;
-        gpu_clock_offsets."0" = 250;
+        max_core_clock = 1950;
+        gpu_clock_offsets."0" = 220;
       };
     };
   };
