@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../home
+    ../../home-modules/common
     inputs.home-manager.nixosModules.home-manager
   ];
 
@@ -23,5 +23,7 @@
 
     # Again, NEVER CHANGE THIS
     home.stateVersion = "26.05";
+
+    # TODO: Install telegram
   };
 }

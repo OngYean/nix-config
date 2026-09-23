@@ -5,7 +5,6 @@
     reaper
     qjackctl
     guitarix
-    audacity
 
     # Audio plugins
     lsp-plugins

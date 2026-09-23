@@ -18,6 +18,11 @@ let
     '';
 in
 {
+  # Gather GLCache from all games in one place
+  home.sessionVariables = {
+    __GL_SHADER_DISK_CACHE_PATH = "${config.home.homeDirectory}/.cache/nvidia";
+  };
+
   programs.mangohud = {
     enable = true;
     settings = {

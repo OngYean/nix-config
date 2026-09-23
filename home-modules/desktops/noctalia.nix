@@ -1,3 +1,4 @@
+# Noctalia shell along with curated theme
 { config, pkgs, ... }:
 
 {
@@ -42,23 +43,21 @@
       enableMcpIntegration = true;
     };
 
+    alacritty = {
+      enable = true;
+    };
+
+    fastfetch = {
+      enable = true;
+    };
+
     discord = {
       enable = true;
       settings.SKIP_HOST_UPDATE = true;
     };
   };
 
-  # User packages
-  home.packages = with pkgs; [
-    # Document and multimedia apps
-    audacity
-    video-trimmer
-    obs-studio
-    xournalpp
-
-    # Social apps
-    telegram-desktop
-  ];
+  
 
   # Desktop entry overrides
   xdg.desktopEntries = {

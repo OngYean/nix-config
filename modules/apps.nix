@@ -3,10 +3,6 @@
 
 {
   programs = {
-    # Desktop experience must-haves - Hyprland WM
-    hyprland.enable = true;
-    hyprland.withUWSM = true;
-
     # Basic dev setup
     zsh.enable = true;
     git = {
@@ -36,22 +32,12 @@
 
     # KDE Partition Manager
     partition-manager.enable = true;
-
-    # KDE Connect
-    kdeconnect.enable = true;
-
-    # An app to manage GNOME keyring credentials
-    seahorse.enable = true;
   };
 
   # Curated packages enforced for all users to ensure basic functionality
   environment.systemPackages = with pkgs; [
-    wget
     alacritty
     fastfetch
-
-    # Required for gdbus to appear in $PATH
-    glib
 
     # System utilities
     kdePackages.filelight
@@ -62,18 +48,8 @@
     kdePackages.dolphin-plugins
     kdePackages.ark
 
-    # Document and media viewers
-    libreoffice
-    kdePackages.okular
-    kdePackages.koko
-    vlc
-
     # Web browser
     brave-origin
-
-    # Android tools
-    android-tools
-    scrcpy
 
     # System monitoring tools
     btop

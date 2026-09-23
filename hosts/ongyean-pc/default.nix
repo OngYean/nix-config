@@ -23,6 +23,9 @@
 
   # Absolutely proprietary
   nixpkgs.config.allowUnfree = true;
+
+  # No need to save power on a desktop's Wi-Fi
+  networking.networkmanager.wifi.powersave = lib.mkForce false;
   
   # Unlock the LUKS2 container first so that the partitions can mount
   boot.initrd.luks.devices."nixos" = {

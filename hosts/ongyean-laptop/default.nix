@@ -30,6 +30,8 @@
     ZED_DEVICE_ID = "1681";
   };
 
+  services.displayManager.noctalia-greeter.enable = true;
+
   # Built-in webcam is broken on this laptop :(
   # Hence it is blocked via udev rule to avoid being waken up
   services.udev.extraRules = ''
