@@ -46,6 +46,7 @@
   fileSystems."/boot".device = lib.mkForce "/dev/disk/by-label/boot";
 
   # Specify `amdgpuBusId` as required by NVIDIA PRIME
+  hardware.nvidia.prime.nvidiaBusId = "PCI:1@0:0:0";
   hardware.nvidia.prime.amdgpuBusId = "PCI:7@0:0:0";
 
   # Device-specific GPU undervolting

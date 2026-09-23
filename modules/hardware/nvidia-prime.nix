@@ -1,4 +1,4 @@
-# NOTE: Override `hardware.nvidia.prime.nvidiaBusId` if it is not `"PCI:1@0:0:0"`
+# NOTE: Add `hardware.nvidia.prime.nvidiaBusId` which is usually `"PCI:1@0:0:0"` on AMD laptops
 # NOTE: Add `hardware.nvidia.prime.intelBusId` or `hardware.nvidia.prime.amdgpuBusId` based on the GPU present
 
 { ... }:
@@ -10,6 +10,5 @@
       enable = true;
       enableOffloadCmd = true;
     };
-    nvidiaBusId = "PCI:1@0:0:0";
   };
 }
