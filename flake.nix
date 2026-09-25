@@ -18,5 +18,13 @@
         ./home-modules/common
       ];
     };
+
+    nixosConfigurations."ongyean-pc" = nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./hosts/ongyean-pc
+        ./home-modules/common
+      ];
+    };
   };
 }
