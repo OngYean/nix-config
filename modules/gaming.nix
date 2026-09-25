@@ -12,7 +12,7 @@
 
   programs.gamemode = {
     enable = true;
-    enableRenice = true;
+    enableRenice = true; # Requires `gamemode` user group
     settings = {
       general = {
         renice = 10;

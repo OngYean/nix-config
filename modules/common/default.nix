@@ -5,6 +5,7 @@
     ./bluetooth.nix
     ./boot.nix
     ./fonts.nix
+    ./git.nix
     ./locale.nix
     ./networking.nix
     ./pipewire.nix

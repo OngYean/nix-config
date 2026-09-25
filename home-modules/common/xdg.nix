@@ -4,21 +4,7 @@
 let
   dotfilesConfig = ../../users/${config.home.username}/dotfiles/.config;
   dotfilesData = ../../users/${config.home.username}/dotfiles/.local/share;
-  mkLinks = dir:
-    let
-      walk = base: prefix:
-        lib.foldl' (acc: name:
-          let
-            path = base + "/${name}";
-            rel  = if prefix == "" then name else "${prefix}/${name}";
-            type = (builtins.readDir base).${name};
-          in
-          if type == "directory"
-          then acc // walk path rel
-          else acc // { ${rel}.source = path; }
-        ) {} (builtins.attrNames (builtins.readDir base));
-    in
-    walk dir "";
+  mkLinks = (import ../../utils.nix lib).mkLinks;
 in
 {
   xdg.enable = true;

@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ../../home-modules/common
     inputs.home-manager.nixosModules.home-manager
   ];
 
@@ -14,9 +13,11 @@
     shell = pkgs.zsh;
   };
 
+  programs.zsh.enable = true;
+
   home-manager.users.ongyean = {
     imports = [
-      ../../home-modules/desktops/noctalia.nix
+      ../../home-modules/desktops/noctalia-hypr
       ../../home-modules/gaming.nix
       ../../home-modules/multimedia.nix
       ../../home-modules/music-production.nix

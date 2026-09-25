@@ -9,6 +9,6 @@
 
   programs.libreoffice = {
     enable = true;
-    package = pkgs.libreoffice-qt;
-  }
+    # package = pkgs.libreoffice-qt;
+  };
 }

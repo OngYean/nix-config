@@ -1,8 +1,19 @@
 # Noctalia shell along with curated theme
 # This setup uses zsh, please set the user's default shell to zsh
-{ config, pkgs, ... }:
+# This setup uses KDE's file management suite (modules/kde-file-management.nix)
+{ config, lib, pkgs, ... }:
 
+# Some config and share files are symlinked at build time instead
+let
+  dotfilesConfig = ./dotfiles/.config;
+  # dotfilesData = ./dotfiles/.local/share;
+  mkLinks = (import ../../../utils.nix lib).mkLinks;
+in
 {
+  imports = [
+    ./theme.nix
+  ];
+
   programs = {
     noctalia = {
       enable = true;
@@ -16,6 +27,16 @@
       defaultKeymap = "viins";
       fastSyntaxHighlighting.enable = true;
       oh-my-zsh.enable = true;
+    };
+
+    # Neovim to replace vi and vim for better experience
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+      vimdiffAlias = true;
+      waylandSupport = true;
     };
 
     zed-editor = {
@@ -57,11 +78,6 @@
   # Noctalia is Wayland-only, hence set fcitx5 to use Wayland frontend
   i18n.inputMethod.fcitx5.waylandFrontend = true;
 
-  fonts.packages = with pkgs; [
-    # Mono font used in qtengine config
-    jetbrains-mono
-  ];
-
   # Desktop entry override for Noctalia
   xdg.desktopEntries = {
     "dev.noctalia.Noctalia" = {
@@ -74,4 +90,14 @@
       startupNotify = false;
     };
   };
+
+  # Global fix for Dolphin being unable to open Neovim
+  qt.kde.settings = {
+    kdeglobals.General.TerminalApplication = "alacritty";
+    kdeglobals.General.TerminalService = "Alacritty.desktop";
+  };
+
+  # Link dotfiles to the real locations
+  xdg.configFile = mkLinks dotfilesConfig;
+  # xdg.dataFile = mkLinks dotfilesData;
 }

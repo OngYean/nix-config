@@ -7,15 +7,16 @@
   imports = [
     ../../modules/common
     ../../modules/apps.nix
-    ../../modules/fonts.nix
     ../../modules/gaming.nix
+    ../../modules/hyprland.nix
+    ../../modules/phone-connect.nix
     ../../modules/secure-boot.nix
     ../../modules/services.nix
     ../../modules/tweaks.nix
     ../../modules/hardware/amd.nix
     ../../modules/hardware/amdgpu.nix
     ../../modules/hardware/nvidia-prime.nix
-    ../../home/ongyean
+    ../../users/ongyean
     ./hardware-configuration.nix
     inputs.chaotic.nixosModules.default
   ];

@@ -14,6 +14,7 @@
   home.packages = with pkgs; [
     qtengine
     darkly
+    jetbrains-mono
     (callPackage ../../../pkgs/custom-icons {})
   ];
 

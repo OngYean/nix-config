@@ -15,6 +15,7 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/ongyean-laptop
+        ./home-modules/common
       ];
     };
   };

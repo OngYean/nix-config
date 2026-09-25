@@ -8,5 +8,5 @@
     SDL_VIDEODRIVER = "wayland";
     SDL_VIDEO_DRIVER = "wayland";
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
-  }
+  };
 }
