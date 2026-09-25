@@ -16,7 +16,12 @@
 
   home-manager.users.ongyean = {
     imports = [
-      ./modules
+      ../../home-modules/desktops/noctalia.nix
+      ../../home-modules/gaming.nix
+      ../../home-modules/multimedia.nix
+      ../../home-modules/music-production.nix
+      ../../home-modules/office.nix
+      ../../home-modules/uwsm.nix
     ];
     home.username = "ongyean";
     home.homeDirectory = "/home/ongyean";
