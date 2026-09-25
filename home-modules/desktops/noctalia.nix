@@ -1,4 +1,5 @@
 # Noctalia shell along with curated theme
+# This setup uses zsh, please set the user's default shell to zsh
 { config, pkgs, ... }:
 
 {
@@ -8,6 +9,7 @@
       systemd.enable = true;
     };
 
+    # NOTE: Please set the user's shell to zsh in NixOS config
     zsh = {
       enable = true;
       autosuggestion.enable = true;
@@ -50,16 +52,17 @@
     fastfetch = {
       enable = true;
     };
-
-    discord = {
-      enable = true;
-      settings.SKIP_HOST_UPDATE = true;
-    };
   };
 
-  
+  # Noctalia is Wayland-only, hence set fcitx5 to use Wayland frontend
+  i18n.inputMethod.fcitx5.waylandFrontend = true;
 
-  # Desktop entry overrides
+  fonts.packages = with pkgs; [
+    # Mono font used in qtengine config
+    jetbrains-mono
+  ];
+
+  # Desktop entry override for Noctalia
   xdg.desktopEntries = {
     "dev.noctalia.Noctalia" = {
       name = "System Settings";

@@ -23,24 +23,28 @@ in
     __GL_SHADER_DISK_CACHE_PATH = "${config.home.homeDirectory}/.cache/nvidia";
   };
 
-  programs.mangohud = {
-    enable = true;
-    settings = {
-      preset = 2; # Show horizontal overlay
-      font_file = "${pkgs.inter}/share/fonts/truetype/InterVariable.ttf"; # Use Inter font
-      no_display = true; # Hide the HUD by default
+  programs = {
+    discord = {
+      enable = true;
+      settings.SKIP_HOST_UPDATE = true;
+    };
+
+    mangohud = {
+      enable = true;
+      settings = {
+        preset = 2; # Show horizontal overlay
+        font_file = "${pkgs.inter}/share/fonts/truetype/InterVariable.ttf"; # Use Inter font
+        no_display = true; # Hide the HUD by default
+      };
     };
   };
 
   home.packages = with pkgs; [
-    # Compatibility tools
-    dwproton-bin.steamcompattool
-
     # Games
     osu-lazer-bin
     prismlauncher
 
-    # Custom desktop entries for Proton games
+    # Custom shell script binaries for Proton games
     # ===========================
     # ===== How to install? =====
     # ===========================
