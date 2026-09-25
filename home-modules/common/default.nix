@@ -12,7 +12,7 @@
     startAsUserService = true;
 
     sharedModules = [
-      # TODO: Add files within this folder
+      ./input-method.nix
       {
       # Global fix for Dolphin being unable to open Neovim
       qt.kde.settings = {

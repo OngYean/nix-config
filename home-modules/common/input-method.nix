@@ -1,13 +1,9 @@
-{ pkgs, ... }:
+# Use fcitx5 as the default input method as ibus is not available in Home Manager
+{ ... }:
 
 {
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";
-    fcitx5.waylandFrontend = true;
-    fcitx5.addons = with pkgs; [
-      qt6Packages.fcitx5-chinese-addons
-      fcitx5-mozc
-    ];
   };
 }
