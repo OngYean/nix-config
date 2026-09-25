@@ -2,8 +2,8 @@
 
 # Some config and share files are symlinked at build time instead
 let
-  dotfilesConfig = ../dotfiles/.config;
-  dotfilesData = ../dotfiles/.local/share;
+  dotfilesConfig = ../../users/${config.home.username}/dotfiles/.config;
+  dotfilesData = ../../users/${config.home.username}/dotfiles/.local/share;
   mkLinks = dir:
     let
       walk = base: prefix:
@@ -43,5 +43,5 @@ in
 
   # Link dotfiles to the real locations
   xdg.configFile = mkLinks dotfilesConfig;
-  # xdg.dataFile   = mkLinks dotfilesData;
+  xdg.dataFile = mkLinks dotfilesData;
 }
