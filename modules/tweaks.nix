@@ -1,6 +1,6 @@
 # Custom hand-picked optimizations, primarily from CachyOS settings
 
-{ ... }:
+{ lib, ... }:
 
 {
   boot.extraModprobeConfig = ''
@@ -82,6 +82,6 @@
   # Custom SCX CPU scheduler
   services.scx = {
     enable = true;
-    scheduler = "scx_bpfland";
+    scheduler = lib.mkDefault "scx_bpfland";
   };
 }
