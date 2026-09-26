@@ -50,11 +50,9 @@
   fileSystems."/boot".device = lib.mkForce "/dev/disk/by-label/boot";
 
   fileSystems."/home/ongyean/Games" = {
-    device = "/dev/disk/by-label/Storage";
-    fsType = "btrfs";
+    device = "/dev/disk/by-label/Games";
+    fsType = "ext4";
     options = [
-      "subvol=Games"
-      "noatime"
       "nofail"
       "noauto"
       "x-systemd.automount"
