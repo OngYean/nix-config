@@ -53,6 +53,8 @@
     device = "/dev/disk/by-label/Games";
     fsType = "ext4";
     options = [
+      "noatime"
+      "commit=60"
       "nofail"
       "noauto"
       "x-systemd.automount"

@@ -84,4 +84,8 @@
     enable = true;
     scheduler = lib.mkDefault "scx_bpfland";
   };
+
+  # I/O optimizations for / and /home
+  fileSystems."/".options = [ "noatime" "commit=60" ];
+  fileSystems."/home".options = [ "noatime" "commit=60" ];
 }
