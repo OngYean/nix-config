@@ -89,6 +89,11 @@ in
     };
   };
 
+  home.packages = with pkgs; [
+    brave-origin
+    resources
+  ];
+
   # Noctalia is Wayland-only, hence set fcitx5 to use Wayland frontend
   i18n.inputMethod.fcitx5.waylandFrontend = true;
 

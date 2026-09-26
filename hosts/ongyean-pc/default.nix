@@ -6,9 +6,9 @@
 {
   imports = [
     ../../modules/common
-    ../../modules/apps.nix
     ../../modules/gaming.nix
     ../../modules/hyprland.nix
+    ../../modules/kde-file-management.nix
     ../../modules/phone-connect.nix
     ../../modules/secure-boot.nix
     ../../modules/services.nix
