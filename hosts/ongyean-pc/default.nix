@@ -34,6 +34,12 @@
   # No need to save power on a desktop's Wi-Fi
   networking.networkmanager.wifi.powersave = lib.mkForce false;
 
+  # Force 5GHz network due to 2.4GHz unreliability
+  networking.wireless.iwd.settings = {
+    Rank.BandModifier5GHz = 65535;
+    Rank.BandModifier2_4GHz = 0.0;
+  };
+
   # Unlock the LUKS2 container first so that the partitions can mount
   boot.initrd.luks.devices."nixos" = {
     device = "/dev/disk/by-label/nixos";
@@ -43,11 +49,28 @@
   # Force the boot partition to be found via its label
   fileSystems."/boot".device = lib.mkForce "/dev/disk/by-label/boot";
 
+  fileSystems."/home/ongyean/Games" = {
+    device = "/dev/disk/by-label/Storage";
+    fsType = "btrfs";
+    options = [
+      "subvol=Games"
+      "noatime"
+      "nofail"
+      "noauto"
+      "x-systemd.automount"
+      "x-systemd.idle-timeout=120"
+      "x-systemd.device-timeout=5s"
+    ];
+  };
+
   services.scx.scheduler = "scx_lavd";
   services.lact.enable = true;
 
   environment.systemPackages = with pkgs; [
     # Enable monitor brightness control
     ddcutil
+
+    # Create fake nvidia-offload that simply passes everything
+    (writeShellScriptBin "nvidia-offload" "exec \"$@\"")
   ];
 }
