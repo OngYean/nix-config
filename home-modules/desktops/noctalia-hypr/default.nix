@@ -68,6 +68,20 @@ in
 
     alacritty = {
       enable = true;
+      settings = {
+        window.padding = {
+          x = 12;
+          y = 12;
+        };
+        window.opacity = 0.5;
+        window.blur = true;
+
+        font.size = 10.0;
+        font.normal.family = "JetBrains Mono";
+        font.normal.style = "Regular";
+
+        scrolling.history = 3023;
+      };
     };
 
     fastfetch = {
