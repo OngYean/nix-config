@@ -66,10 +66,12 @@
   services.scx.scheduler = "scx_lavd";
   services.lact.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    # Enable monitor brightness control
-    ddcutil
+  services.ddccontrol = {
+    enable = true;
+    package = pkgs.ddcutil;
+  };
 
+  environment.systemPackages = with pkgs; [
     # Create fake nvidia-offload that simply passes everything
     (writeShellScriptBin "nvidia-offload" "exec \"$@\"")
   ];
