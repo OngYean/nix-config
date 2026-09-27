@@ -21,6 +21,7 @@ in
   # Gather GLCache from all games in one place
   home.sessionVariables = {
     __GL_SHADER_DISK_CACHE_PATH = "${config.home.homeDirectory}/.cache/nvidia";
+    VKD3D_SHADER_CACHE_PATH = "${config.home.homeDirectory}/.cache/nvidia";
   };
 
   programs = {
