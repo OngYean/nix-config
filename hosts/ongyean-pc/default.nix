@@ -63,6 +63,9 @@
     ];
   };
 
+  # zstd is less optimal on this device which has less RAM
+  zramSwap.algorithm = "lz4";
+
   services.scx.scheduler = "scx_lavd";
   services.lact.enable = true;
 
