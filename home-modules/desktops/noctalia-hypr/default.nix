@@ -7,7 +7,7 @@
 let
   dotfilesConfig = ./dotfiles/.config;
   # dotfilesData = ./dotfiles/.local/share;
-  mkLinks = (import ../../../utils.nix lib).mkLinks;
+  mkLinks = (import ../../../utils.nix lib pkgs).mkLinks;
 in
 {
   imports = [

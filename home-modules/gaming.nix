@@ -1,21 +1,7 @@
 { pkgs, config, lib, ... }:
 
 let
-  customGameBin = { name, exePath, gameid ? name, env ? {}, prefix ? "mangohud gamemoderun", protonPkg ? pkgs.dwproton-bin }:
-    let
-      envVars = {
-        # Common defaults
-        GAMEID = gameid;
-        PROTONPATH = "${protonPkg.steamcompattool}";
-      } // env;  # Merge game-specific overrides
-
-      envStr = builtins.concatStringsSep "\n"
-        (lib.mapAttrsToList (k: v: "export ${k}=${toString v}") envVars);
-    in
-    pkgs.writeShellScriptBin name ''
-      ${envStr}
-      nvidia-offload ${prefix} ${pkgs.umu-launcher}/bin/umu-run "${exePath}"
-    '';
+  mkProtonGame = (import ../utils.nix lib pkgs).mkProtonGame;
 in
 {
   # Gather GLCache from all games in one place
@@ -53,7 +39,7 @@ in
     # 2. Confirm the PROTONPATH, use `nix eval --raw nixpkgs#pkgs.yourproton.steamcompattool` to find it
     # 3. Run `GAMEID=<GAMEID> PROTONPATH=<PROTONPATH> umu-run <path to exe>`
     # Step 3 can be used for the game installer, launcher and other Windows utilities
-    (customGameBin {
+    (mkProtonGame {
       name = "umu-genshin";
       exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/Unlocker/unlockfps_nc.exe";
       env = {
@@ -63,7 +49,7 @@ in
       };
     })
 
-    (customGameBin {
+    (mkProtonGame {
       name = "umu-genshin-launcher";
       gameid = "umu-genshin";
       exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/HoYoPlay/launcher.exe";
@@ -73,7 +59,7 @@ in
       };
     })
 
-    (customGameBin {
+    (mkProtonGame {
       name = "umu-starrail";
       exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/HoYoPlay/games/Star Rail Games/StarRail.exe";
       env = {
@@ -82,7 +68,7 @@ in
       };
     })
 
-    (customGameBin {
+    (mkProtonGame {
       name = "umu-starrail-launcher";
       gameid = "umu-starrail";
       exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/HoYoPlay/launcher.exe";
@@ -91,7 +77,7 @@ in
       };
     })
 
-    (customGameBin {
+    (mkProtonGame {
       name = "umu-nte";
       exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/Neverness To Everness/NTEGlobalLauncher.exe";
       env = {
