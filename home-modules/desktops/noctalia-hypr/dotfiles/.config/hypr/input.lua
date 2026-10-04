@@ -15,10 +15,11 @@ hl.config({
         sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
 	    accel_profile = "flat",
 
-	-- MacBook ahh touchpad
+	    -- MacBook ahh touchpad
         scroll_method = "2fg",
         touchpad = {
             natural_scroll = true,
+            clickfinger_behavior = true,
             drag_3fg = 1,
 	    scroll_factor = 0.5,
         },
