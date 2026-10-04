@@ -58,8 +58,8 @@
       "nofail"
       "noauto"
       "x-systemd.automount"
-      "x-systemd.idle-timeout=120"
-      "x-systemd.device-timeout=5s"
+      # "x-systemd.idle-timeout=120"
+      # "x-systemd.device-timeout=5s"
     ];
   };
 
@@ -67,8 +67,31 @@
   zramSwap.algorithm = "lz4";
 
   services.scx.scheduler = "scx_lavd";
-  services.lact.enable = true;
 
+  # Device-specific GPU undervolting
+  services.lact = {
+    enable = true;
+    settings = {
+      version = 7;
+      daemon = {
+        log_level = "info";
+        admin_group = "wheel";
+        disable_clocks_cleanup = false;
+      };
+      apply_settings_timer = 5;
+      current_profile = "Undervolt";
+
+      profiles."Undervolt".gpus."10DE:21C4-1458:4013-0000:01:00.0" = {
+        fan_control_enabled = false;
+        power_mizer_mode = "PreferMaximumPerformance";
+        power_cap = 150.0;
+        min_core_clock = 300;
+        max_core_clock = 2000;
+        gpu_clock_offsets."0" = 120;
+        mem_clock_offsets."0" = 1000;
+      };
+    };
+  };
   services.ddccontrol = {
     enable = true;
     package = pkgs.ddcutil;
