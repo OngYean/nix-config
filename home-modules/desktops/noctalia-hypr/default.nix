@@ -92,6 +92,7 @@ in
   home.packages = with pkgs; [
     brave-origin
     resources
+    kdePackages.kcalc
   ];
 
   # Noctalia is Wayland-only, hence set fcitx5 to use Wayland frontend
