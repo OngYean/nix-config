@@ -1,10 +1,10 @@
-{ config, lib, ... }:
+{ config, pkgs, ... }@args:
 
 # Some config and share files are symlinked at build time instead
 let
   dotfilesConfig = ../../users/${config.home.username}/dotfiles/.config;
   dotfilesData = ../../users/${config.home.username}/dotfiles/.local/share;
-  mkLinks = (import ../../utils.nix lib).mkLinks;
+  mkLinks = (import ../../utils.nix args).mkLinks;
 in
 {
   xdg.enable = true;

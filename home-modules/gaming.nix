@@ -1,13 +1,14 @@
-{ pkgs, config, lib, ... }:
+{ config, pkgs, ... }@args:
 
 let
-  mkProtonGame = (import ../utils.nix lib pkgs).mkProtonGame;
+  mkProtonGame = (import ../utils.nix args).mkProtonGame;
 in
 {
   # Gather GLCache from all games in one place
   home.sessionVariables = {
-    __GL_SHADER_DISK_CACHE_PATH = "${config.home.homeDirectory}/.cache/nvidia";
-    VKD3D_SHADER_CACHE_PATH = "${config.home.homeDirectory}/.cache/nvidia";
+    __GL_SHADER_DISK_CACHE_PATH = "${config.home.homeDirectory}/.cache";
+    __GL_SHADER_DISK_CACHE_SIZE = 12000000000;
+    VKD3D_SHADER_CACHE_PATH = "${config.home.homeDirectory}/.cache";
   };
 
   programs = {
@@ -82,8 +83,8 @@ in
       exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/Neverness To Everness/NTEGlobalLauncher.exe";
       env = {
         PROTON_ENABLE_WAYLAND=1;
-        PROTON_DXVK_GPLASYNC=1;
-        VKD3D_CONFIG="single_queue,no_upload_hvv,force_static_cbv";
+        PROTON_DXVK_GPLASYNC=1; # Active when run with DX11
+        VKD3D_CONFIG="force_static_cbv"; # Active when run with DX12
       };
     })
   ];

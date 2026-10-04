@@ -1,4 +1,4 @@
-lib: pkgs: 
+{ lib, pkgs, ... }:
 
 {
   # Walk through `dir` and create dotfile entries with sources set correctly

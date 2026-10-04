@@ -1,13 +1,13 @@
 # Noctalia shell along with curated theme
 # This setup uses zsh, please set the user's default shell to zsh
 # This setup uses KDE's file management suite (modules/kde-file-management.nix)
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }@args:
 
 # Some config and share files are symlinked at build time instead
 let
   dotfilesConfig = ./dotfiles/.config;
   # dotfilesData = ./dotfiles/.local/share;
-  mkLinks = (import ../../../utils.nix lib pkgs).mkLinks;
+  mkLinks = (import ../../../utils.nix args).mkLinks;
 in
 {
   imports = [
