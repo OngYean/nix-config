@@ -63,9 +63,6 @@
     ];
   };
 
-  # zstd is less optimal on this device which has less RAM
-  zramSwap.algorithm = "lz4";
-
   services.scx.scheduler = "scx_lavd";
 
   # Device-specific GPU undervolting
@@ -92,6 +89,8 @@
       };
     };
   };
+  
+  # Enable screen brightness adjustment from userspace shell
   services.ddccontrol = {
     enable = true;
     package = pkgs.ddcutil;
