@@ -3,4 +3,9 @@
 {
   services.xserver.videoDrivers = [ "amdgpu" ];
   hardware.amdgpu.initrd.enable = true;
+
+  boot.extraModprobeConfig = ''
+    options amdgpu si_support=1 cik_support=1
+    options radeon si_support=0 cik_support=0
+  '';
 }

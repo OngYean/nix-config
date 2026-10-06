@@ -1,18 +1,19 @@
 # Custom hand-picked optimizations, primarily from CachyOS settings
 
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 {
   boot.extraModprobeConfig = ''
     blacklist iTCO_wdt
     blacklist sp5100_tco
+    blacklist wdat_wdt
   '';
 
   boot.kernel.sysctl = {
     # The sysctl swappiness parameter determines the kernel's preference for pushing anonymous pages or page cache to disk in memory-starved situations.
     # A low value causes the kernel to prefer freeing up open files (page cache), a high value causes the kernel to try to use swap space,
     # and a value of 100 means IO cost is assumed to be equal.
-    "vm.swappiness" = 150;
+    "vm.swappiness" = 100;
 
     # The value controls the tendency of the kernel to reclaim the memory which is used for caching of directory and inode objects (VFS cache).
     # Lowering it from the default value of 100 makes the kernel less inclined to reclaim VFS cache (do not set it to 0, this may produce out-of-memory conditions)
@@ -55,6 +56,9 @@
 
     # Set size of file handles and inode cache
     "fs.file-max" = 2097152;
+
+    # Allow to safely reboot on system hang
+    "kernel.sysrq" = 1;
   };
 
   services.journald.settings.Journal = {
@@ -88,4 +92,22 @@
   # I/O optimizations for / and /home
   fileSystems."/".options = [ "noatime" "commit=60" ];
   fileSystems."/home".options = [ "noatime" "commit=60" ];
+
+  # udev rules from CachyOS
+  services.udev.extraRules = ''
+    ACTION=="change", KERNEL=="zram0", ATTR{initstate}=="1", SYSCTL{vm.swappiness}="150", RUN+="${pkgs.bash}/bin/sh -c 'echo N > /sys/module/zswap/parameters/enabled'"
+
+    KERNEL=="rtc0", GROUP="audio"
+    KERNEL=="hpet", GROUP="audio"
+
+    ACTION=="add", SUBSYSTEM=="scsi_host", KERNEL=="host*", ATTR{link_power_management_supported}=="1", ATTR{link_power_management_policy}=="*", ATTR{link_power_management_policy}="max_performance"
+
+    ACTION=="add|change", KERNEL=="sd[a-z]*", ATTR{queue/rotational}=="1", ATTR{queue/scheduler}="bfq"
+    ACTION=="add|change", KERNEL=="sd[a-z]*|mmcblk[0-9]*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="mq-deadline"
+    ACTION=="add|change", KERNEL=="nvme[0-9]*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="kyber"
+
+    ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", ENV{ID_USB_DRIVER}=="", ENV{ID_BUS}=="ata", RUN+="${pkgs.hdparm}/bin/hdparm -B 254 -S 0 /dev/%k"
+
+    DEVPATH=="/devices/virtual/misc/cpu_dma_latency", OWNER="root", GROUP="audio", MODE="0660"
+  '';
 }

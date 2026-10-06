@@ -10,4 +10,8 @@
     modesetting.enable = true;
     powerManagement.enable = true;
   };
+
+  boot.extraModprobeConfig = ''
+    options nvidia NVreg_InitializeSystemMemoryAllocations=0
+  '';
 }
