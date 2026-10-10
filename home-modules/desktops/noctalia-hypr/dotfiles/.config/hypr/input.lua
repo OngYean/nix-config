@@ -46,3 +46,9 @@ hl.gesture({
     direction = "horizontal",
     action = "scroll_move"
 })
+
+-- Touchpad sensitivity override for ongyean-laptop
+hl.device({
+    name = "syna32cd:00-06cb:ce7d-touchpad",
+    sensitivity = 0.5,
+})
