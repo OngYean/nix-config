@@ -1,7 +1,7 @@
 # Noctalia shell along with curated theme
 # This setup uses zsh, please set the user's default shell to zsh
 # This setup uses KDE's file management suite (modules/kde-file-management.nix)
-{ config, pkgs, ... }@args:
+{ config, lib, pkgs, ... }@args:
 
 # Some config and share files are symlinked at build time instead
 let
@@ -111,11 +111,21 @@ in
     };
   };
 
+  # Reload Hyprland config
+  home.activation.reloadHyprctl = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    $DRY_RUN_CMD ${pkgs.hyprland}/bin/hyprctl reload
+  '';
+
   # Global fix for Dolphin being unable to open Neovim
   qt.kde.settings = {
     kdeglobals.General.TerminalApplication = "alacritty";
     kdeglobals.General.TerminalService = "Alacritty.desktop";
   };
+
+  # Remove stale ksycoca6 cache files
+  home.activation.removeKsycoca6 = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    $DRY_RUN_CMD rm -f ${config.home.homeDirectory}/.cache/ksycoca6_en_*
+  '';
 
   # Link dotfiles to the real locations
   xdg.configFile = mkLinks dotfilesConfig;
