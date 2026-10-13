@@ -23,6 +23,34 @@
 
   networking.hostName = "ongyean-laptop";
 
+  # Set this device to masquerade network traffic through Ethernet port
+  networking = {
+    networkmanager.ensureProfiles.profiles."desktop-share" = {
+      connection = {
+        id = "desktop-share";
+        type = "ethernet";
+        interface-name = "eno1";
+        autoconnect = "true";
+        autoconnect-priority = "-10";
+      };
+
+      ipv4 = {
+        method = "shared";
+        address1 = "10.42.0.1/24";
+      };
+      ipv6.method = "ignore";
+    };
+
+    # Allow DNS and DHCP ports on Ethernet interface
+    firewall.interfaces."eno1" = {
+      allowedUDPPorts = [ 53 67 ];
+      allowedTCPPorts = [ 53 ];
+    };
+
+    # Avoid rpfilter from dropping NATed traffic
+    firewall.checkReversePath = "loose";
+  };
+
   # Absolutely proprietary
   nixpkgs.config.allowUnfree = true;
 
