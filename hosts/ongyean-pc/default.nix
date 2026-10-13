@@ -58,8 +58,8 @@
       "nofail"
       "noauto"
       "x-systemd.automount"
-      # "x-systemd.idle-timeout=120"
-      # "x-systemd.device-timeout=5s"
+      "x-systemd.idle-timeout=120"
+      "x-systemd.device-timeout=5s"
     ];
   };
 
@@ -89,7 +89,7 @@
       };
     };
   };
-  
+
   # Enable screen brightness adjustment from userspace shell
   services.ddccontrol = {
     enable = true;
