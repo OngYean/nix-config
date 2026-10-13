@@ -65,15 +65,29 @@ in
   };
 
   # Force the boot partition to be found via its label
-  fileSystems."/boot".device = lib.mkForce "/dev/disk/by-label/boot";
-
-  fileSystems = lib.genAttrs [
+  # and mount NFS media directories
+  # as well as Games directory from external SSD, if plugged in
+  fileSystems = (lib.genAttrs [
     "/home/ongyean/Documents"
     "/home/ongyean/Music"
     "/home/ongyean/Pictures"
     "/home/ongyean/Videos"
-    "/home/ongyean/Games"
-  ] mountFromNFS;
+  ] mountFromNFS) // {
+    "/boot".device = lib.mkForce "/dev/disk/by-label/boot";
+    "/home/ongyean/Games" = {
+      device = "/dev/disk/by-label/Games";
+      fsType = "ext4";
+      options = [
+        "noatime"
+        "commit=60"
+        "nofail"
+        "noauto"
+        "x-systemd.automount"
+        "x-systemd.idle-timeout=120"
+        "x-systemd.device-timeout=5s"
+      ];
+    };
+  };
 
   services.scx.scheduler = "scx_lavd";
 
