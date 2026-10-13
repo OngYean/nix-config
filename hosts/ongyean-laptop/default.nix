@@ -41,14 +41,26 @@
       ipv6.method = "ignore";
     };
 
-    # Allow DNS and DHCP ports on Ethernet interface
-    firewall.interfaces."eno1" = {
-      allowedUDPPorts = [ 53 67 ];
-      allowedTCPPorts = [ 53 ];
-    };
-
     # Avoid rpfilter from dropping NATed traffic
     firewall.checkReversePath = "loose";
+  };
+
+  # Share user `ongyean`'s media directories through shared mode
+  services.nfs.server = {
+    enable = true;
+    exports = ''
+      /home/ongyean/Documents 10.42.0.0/24(rw,sync,no_subtree_check)
+      /home/ongyean/Music 10.42.0.0/24(rw,sync,no_subtree_check)
+      /home/ongyean/Pictures 10.42.0.0/24(rw,sync,no_subtree_check)
+      /home/ongyean/Videos 10.42.0.0/24(rw,sync,no_subtree_check)
+      /home/ongyean/Games 10.42.0.0/24(rw,sync,no_subtree_check)
+    '';
+  };
+
+  # Allow DNS, DHCP and NFS ports on Ethernet interface
+  networking.firewall.interfaces."eno1" = {
+    allowedUDPPorts = [ 53 67 ];
+    allowedTCPPorts = [ 53 2049 ];
   };
 
   # Absolutely proprietary

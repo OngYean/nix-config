@@ -3,6 +3,24 @@
 # and the boot partition should be labelled "boot"
 { lib, pkgs, inputs, ... }:
 
+let
+  nfsMountOptions = [
+    "noatime"
+    "nofail"
+    "noauto"
+    "x-systemd.automount"
+    "x-systemd.idle-timeout=600"
+    "x-systemd.mount-timeout=10"
+    "nfsvers=4.2"
+    "_netdev"
+  ];
+
+  mountFromNFS = path: {
+    device = "10.42.0.1:${path}";
+    fsType = "nfs";
+    options = nfsMountOptions;
+  };
+in
 {
   imports = [
     ../../modules/common
@@ -49,19 +67,13 @@
   # Force the boot partition to be found via its label
   fileSystems."/boot".device = lib.mkForce "/dev/disk/by-label/boot";
 
-  fileSystems."/home/ongyean/Games" = {
-    device = "/dev/disk/by-label/Games";
-    fsType = "ext4";
-    options = [
-      "noatime"
-      "commit=60"
-      "nofail"
-      "noauto"
-      "x-systemd.automount"
-      "x-systemd.idle-timeout=120"
-      "x-systemd.device-timeout=5s"
-    ];
-  };
+  fileSystems = lib.genAttrs [
+    "/home/ongyean/Documents"
+    "/home/ongyean/Music"
+    "/home/ongyean/Pictures"
+    "/home/ongyean/Videos"
+    "/home/ongyean/Games"
+  ] mountFromNFS;
 
   services.scx.scheduler = "scx_lavd";
 
