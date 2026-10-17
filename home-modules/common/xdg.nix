@@ -7,23 +7,26 @@ let
   mkLinks = (import ../../utils.nix args).mkLinks;
 in
 {
-  xdg.enable = true;
-  xdg.userDirs = {
+  xdg = {
     enable = true;
-    createDirectories = true;
-    download = "${config.home.homeDirectory}/Downloads";
-    documents = "${config.home.homeDirectory}/Documents";
-    pictures = "${config.home.homeDirectory}/Pictures";
-    videos = "${config.home.homeDirectory}/Videos";
-    music = "${config.home.homeDirectory}/Music";
-    projects = "${config.home.homeDirectory}/Projects";
-    templates = "${config.home.homeDirectory}/Templates";
-    publicShare = "${config.home.homeDirectory}/Public";
-    desktop = "${config.home.homeDirectory}/Desktop";
+    mimeApps.enable = true;
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      download = "${config.home.homeDirectory}/Downloads";
+      documents = "${config.home.homeDirectory}/Documents";
+      pictures = "${config.home.homeDirectory}/Pictures";
+      videos = "${config.home.homeDirectory}/Videos";
+      music = "${config.home.homeDirectory}/Music";
+      projects = "${config.home.homeDirectory}/Projects";
+      templates = "${config.home.homeDirectory}/Templates";
+      publicShare = "${config.home.homeDirectory}/Public";
+      desktop = "${config.home.homeDirectory}/Desktop";
 
-    # Optional: Custom directories
-    extraConfig = {
-      GAMES = "${config.home.homeDirectory}/Games";
+      # Optional: Custom directories
+      extraConfig = {
+        GAMES = "${config.home.homeDirectory}/Games";
+      };
     };
   };
 
