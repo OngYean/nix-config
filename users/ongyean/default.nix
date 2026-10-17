@@ -9,7 +9,13 @@
   users.users."ongyean" = {
     isNormalUser = true;
     description = "Ong Yean";
-    extraGroups = [ "wheel" "networkmanager" "audio" "gamemode" "i2c" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "audio"
+      "gamemode"
+      "i2c"
+    ];
     shell = pkgs.zsh;
   };
 
@@ -21,6 +27,7 @@
       ../../home-modules/gaming.nix
       ../../home-modules/multimedia.nix
       ../../home-modules/music-production.nix
+      ../../home-modules/neovim.nix
       ../../home-modules/office.nix
       ../../home-modules/uwsm.nix
     ];
