@@ -28,10 +28,10 @@ in
     # NOTE: Please set the user's shell to zsh in NixOS config
     zsh = {
       enable = true;
+      autocd = true;
       autosuggestion.enable = true;
       defaultKeymap = "viins";
       fastSyntaxHighlighting.enable = true;
-      oh-my-zsh.enable = true;
     };
 
     zed-editor = {
