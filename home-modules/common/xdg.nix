@@ -1,4 +1,4 @@
-{ config, pkgs, ... }@args:
+{ config, ... }@args:
 
 # Some config and share files are symlinked at build time instead
 let
