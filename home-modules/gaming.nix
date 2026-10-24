@@ -60,6 +60,26 @@ in
     })
 
     (mkProtonGame {
+      name = "umu-zenlesszonezero";
+      exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/HoYoPlay/games/ZenlessZoneZero Game/ZenlessZoneZero.exe";
+      env = {
+        UMU_USE_STEAM=1;
+        PROTON_ENABLE_WAYLAND=1;
+        PROTON_DXVK_GPLASYNC=1;
+      };
+    })
+
+    (mkProtonGame {
+      name = "umu-zenlesszonezero-launcher";
+      gameid = "umu-zenlesszonezero";
+      exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/HoYoPlay/launcher.exe";
+      env = {
+        UMU_USE_STEAM=1;
+        PROTON_DXVK_GPLASYNC=1;
+      };
+    })
+
+    (mkProtonGame {
       name = "umu-starrail";
       exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/HoYoPlay/games/Star Rail Games/StarRail.exe";
       env = {
@@ -111,6 +131,21 @@ in
         name = "Open Launcher";
         exec = "umu-genshin-launcher";
         icon = "genshin-impact";
+      };
+    };
+
+    zenless-zone-zero = {
+      name = "Zenless Zone Zero";
+      exec = "umu-zenlesszonezero";
+      icon = "zenless-zone-zero";
+      categories = [ "Game" ];
+      settings = {
+        StartupWMClass = "steam_app_zenlesszonezero";
+      };
+       actions."open-launcher" = {
+        name = "Open Launcher";
+        exec = "umu-zenlesszonezero-launcher";
+        icon = "zenless-zone-zero";
       };
     };
 
