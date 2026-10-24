@@ -9,7 +9,13 @@
   users.users."ongyean" = {
     isNormalUser = true;
     description = "Ong Yean";
-    extraGroups = [ "wheel" "networkmanager" "audio" "gamemode" "i2c" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "audio"
+      "gamemode"
+      "i2c"
+    ];
     shell = pkgs.zsh;
   };
 
@@ -21,6 +27,7 @@
       ../../home-modules/gaming.nix
       ../../home-modules/multimedia.nix
       ../../home-modules/music-production.nix
+      ../../home-modules/neovim.nix
       ../../home-modules/office.nix
       ../../home-modules/uwsm.nix
     ];
@@ -35,7 +42,7 @@
     # Add Chinese and Japanese IME for this user
     i18n.inputMethod.fcitx5.addons = with pkgs; [
       qt6Packages.fcitx5-chinese-addons
-      fcitx5-mozc
+      # fcitx5-mozc-ut
     ];
   };
 }

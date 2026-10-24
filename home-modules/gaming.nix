@@ -45,7 +45,6 @@ in
       exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/Unlocker/unlockfps_nc.exe";
       env = {
         UMU_USE_STEAM=1;
-        PROTON_ENABLE_WAYLAND=1;
         PROTON_DXVK_GPLASYNC=1;
       };
     })
@@ -85,6 +84,15 @@ in
         PROTON_ENABLE_WAYLAND=1;
         PROTON_DXVK_GPLASYNC=1; # Active when run with DX11
         VKD3D_CONFIG="force_static_cbv"; # Active when run with DX12
+      };
+    })
+
+    (mkProtonGame {
+      name = "umu-endfield";
+      exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/GRYPHLINK/Launcher.exe";
+      env = {
+        PROTON_ENABLE_WAYLAND=1;
+        PROTON_DXVK_GPLASYNC=1; # Active when run with DX11
       };
     })
   ];
@@ -129,6 +137,16 @@ in
       categories = [ "Game" ];
       settings = {
         StartupWMClass = "steam_app_nte";
+      };
+    };
+
+    arknights-endfield = {
+      name = "Arknights: Endfield";
+      exec = "umu-endfield";
+      icon = "arknights-endfield";
+      categories = [ "Game" ];
+      settings = {
+        StartupWMClass = "steam_app_endfield";
       };
     };
   };

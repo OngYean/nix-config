@@ -3,8 +3,9 @@
 {
   fonts = {
     fontconfig.enable = true;
+    enableDefaultPackages = true;
     packages = with pkgs; [
-      corefonts
+      corefonts # Microsoft's core fonts
     ];
   };
 }
