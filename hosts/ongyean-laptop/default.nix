@@ -63,6 +63,11 @@
     allowedTCPPorts = [ 53 2049 ];
   };
 
+  networking.wireless.iwd.settings = {
+    Rank.BandModifier6GHz = 65535;
+    Rank.BandModifier2_4GHz = 0.0;
+  };
+
   # Absolutely proprietary
   nixpkgs.config.allowUnfree = true;
 
