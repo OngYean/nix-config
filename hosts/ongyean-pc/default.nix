@@ -116,11 +116,14 @@ in
     };
   };
 
+  # Enable screen brightness adjustment from userspace shell
+  services.ddccontrol = {
+    enable = true;
+    package = pkgs.ddcutil;
+  };
+
   environment.systemPackages = with pkgs; [
     # Create fake nvidia-offload that simply passes everything
     (writeShellScriptBin "nvidia-offload" "exec \"$@\"")
-
-    # Enable screen brightness adjustment from userspace shell
-    ddcutil
   ];
 }
