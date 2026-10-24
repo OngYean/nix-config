@@ -19,7 +19,7 @@
     walk dir "";
 
   # Create user binary for Proton-based games
-  mkProtonGame = { name, exePath, gameid ? name, env ? {}, wrapperCmd ? "mangohud gamemoderun", protonPkg ? pkgs.dwproton-bin }:
+  mkProtonGame = { name, exePath, gameid ? name, env ? {}, wrapperCmd ? "${pkgs.mangohud}/bin/mangohud ${pkgs.gamemode}/bin/gamemoderun", protonPkg ? pkgs.dwproton-bin }:
     let
       envVars = {
         # Common defaults
