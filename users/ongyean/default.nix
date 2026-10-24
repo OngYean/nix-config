@@ -42,7 +42,7 @@
     # Add Chinese and Japanese IME for this user
     i18n.inputMethod.fcitx5.addons = with pkgs; [
       qt6Packages.fcitx5-chinese-addons
-      fcitx5-mozc
+      # fcitx5-mozc-ut
     ];
   };
 }
