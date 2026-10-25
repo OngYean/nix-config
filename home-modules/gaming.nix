@@ -108,6 +108,17 @@ in
     })
 
     (mkProtonGame {
+      name = "umu-nte-gamescope";
+      gameid = "umu-nte";
+      exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/Neverness To Everness/NTEGlobalLauncher.exe";
+      wrapperCmd = "${pkgs.gamemode}/bin/gamemoderun ${pkgs.gamescope}/bin/gamescope -W 1920 -H 1080 -f --mangoapp --force-grab-cursor --";
+      env = {
+        PROTON_DXVK_GPLASYNC=1; # Active when run with DX11
+        VKD3D_CONFIG="force_static_cbv"; # Active when run with DX12
+      };
+    })
+
+    (mkProtonGame {
       name = "umu-endfield";
       exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/GRYPHLINK/Launcher.exe";
       env = {
@@ -172,6 +183,12 @@ in
       categories = [ "Game" ];
       settings = {
         StartupWMClass = "steam_app_nte";
+      };
+
+      actions."launch-gamescope" = {
+        name = "Launch via gamescope";
+        exec = "umu-nte-gamescope";
+        icon = "neverness-to-everness";
       };
     };
 
