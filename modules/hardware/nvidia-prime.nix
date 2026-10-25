@@ -10,7 +10,6 @@
       enable = true;
       enableOffloadCmd = true;
     };
-    dynamicBoost.enable = true;
     powerManagement.finegrained = true;
   };
 }
