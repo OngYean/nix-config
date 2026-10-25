@@ -24,6 +24,7 @@ in
 {
   imports = [
     ../../modules/common
+    ../../modules/ddcutil.nix
     ../../modules/gaming.nix
     ../../modules/hyprland.nix
     ../../modules/kde-file-management.nix
@@ -114,12 +115,6 @@ in
         mem_clock_offsets."0" = 1000;
       };
     };
-  };
-
-  # Enable screen brightness adjustment from userspace shell
-  services.ddccontrol = {
-    enable = true;
-    package = pkgs.ddcutil;
   };
 
   environment.systemPackages = with pkgs; [
