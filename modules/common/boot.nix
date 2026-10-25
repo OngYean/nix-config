@@ -23,7 +23,6 @@
       "splash"
       "udev.log_level=3"
     ];
-    initrd.verbose = false;
 
     # Plymouth boot screen
     plymouth = {

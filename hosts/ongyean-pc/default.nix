@@ -59,10 +59,7 @@ in
   };
 
   # Unlock the LUKS2 container first so that the partitions can mount
-  boot.initrd.luks.devices."nixos" = {
-    device = "/dev/disk/by-label/nixos";
-    preLVM = true;
-  };
+  boot.initrd.luks.devices."nixos".device = "/dev/disk/by-label/nixos";
 
   # Force the boot partition to be found via its label
   # and mount NFS media directories
