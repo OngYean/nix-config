@@ -5,7 +5,7 @@
     video-trimmer
     kdePackages.koko
     vlc
-    # audacity
+    audacity
   ];
 
   programs.obs-studio.enable = true;
