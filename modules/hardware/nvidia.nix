@@ -9,9 +9,9 @@
     package = pkgs.nvidia_cachyos;
     modesetting.enable = true;
     powerManagement.enable = true;
-  };
 
-  boot.extraModprobeConfig = ''
-    options nvidia NVreg_InitializeSystemMemoryAllocations=0
-  '';
+    moduleParams.nvidia = {
+      NVreg_InitializeSystemMemoryAllocations = 0;
+    };
+  };
 }
