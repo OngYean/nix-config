@@ -5,10 +5,12 @@
 
 {
   imports = [ ./nvidia.nix ];
-  hardware.nvidia.prime = {
-    offload = {
+  hardware.nvidia = {
+    prime.offload = {
       enable = true;
       enableOffloadCmd = true;
     };
+    dynamicBoost.enable = true;
+    powerManagement.finegrained = true;
   };
 }
