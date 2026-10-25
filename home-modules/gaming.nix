@@ -45,6 +45,7 @@ in
       exePath = "$HOME/Games/umu/$GAMEID/drive_c/Program Files/Unlocker/unlockfps_nc.exe";
       env = {
         UMU_USE_STEAM=1;
+        PROTON_ENABLE_WAYLAND=1;
         PROTON_DXVK_GPLASYNC=1;
       };
     })
