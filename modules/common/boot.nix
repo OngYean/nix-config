@@ -13,8 +13,8 @@
     };
 
     # Uncomment this for mainstream Linux kernel
-    # kernelPackages = pkgs.linuxPackages_latest;
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages = pkgs.linuxPackages_latest;
+    # kernelPackages = pkgs.linuxPackages_cachyos;
 
     consoleLogLevel = 0;
     kernelParams = [
