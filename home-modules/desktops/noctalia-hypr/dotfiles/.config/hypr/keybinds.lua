@@ -66,7 +66,7 @@ hl.bind(mainMod .. "mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. "mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Noctalia core keybinds
-hl.bind(mainMod .. "SUPER_L", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"), { release = true })
+hl.bind(mainMod .. "space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 hl.bind(mainMod .. "C", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
 hl.bind(mainMod .. "comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 hl.bind(mainMod .. "V", hl.dsp.exec_cmd(ipc .. "panel-toggle clipboard"))
