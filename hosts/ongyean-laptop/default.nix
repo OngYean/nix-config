@@ -6,6 +6,7 @@
 {
   imports = [
     ../../modules/common
+    ../../modules/ddcutil.nix
     ../../modules/gaming.nix
     ../../modules/hyprland.nix
     ../../modules/kde-file-management.nix
