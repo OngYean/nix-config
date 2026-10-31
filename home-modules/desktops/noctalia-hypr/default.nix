@@ -143,6 +143,7 @@ in
     kdePackages.kcalc
     spotifast
     zapfast
+    telegram-desktop
   ];
 
   # Noctalia is Wayland-only, hence set fcitx5 to use Wayland frontend
