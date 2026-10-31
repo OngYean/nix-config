@@ -32,6 +32,7 @@ in
     ../../modules/secure-boot.nix
     ../../modules/services.nix
     ../../modules/tweaks.nix
+    ../../modules/display-manager/noctalia-greeter.nix
     ../../modules/hardware/nvidia.nix
     ../../users/ongyean
     ./hardware-configuration.nix
@@ -42,8 +43,6 @@ in
 
   # Absolutely proprietary
   nixpkgs.config.allowUnfree = true;
-
-  services.displayManager.noctalia-greeter.enable = true;
 
   # Automatically switch USB Wi-Fi adapter to network mode from CD-ROM mode
   services.udev.extraRules = ''

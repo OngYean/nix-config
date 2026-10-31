@@ -14,6 +14,7 @@
     ../../modules/secure-boot.nix
     ../../modules/services.nix
     ../../modules/tweaks.nix
+    ../../modules/display-manager/noctalia-greeter.nix
     ../../modules/hardware/amd.nix
     ../../modules/hardware/amdgpu.nix
     ../../modules/hardware/nvidia-prime.nix
@@ -76,8 +77,6 @@
   environment.sessionVariables = {
     ZED_DEVICE_ID = "1681";
   };
-
-  services.displayManager.noctalia-greeter.enable = true;
 
   # Built-in webcam is broken on this laptop :(
   # Hence it is blocked via udev rule to avoid being waken up
