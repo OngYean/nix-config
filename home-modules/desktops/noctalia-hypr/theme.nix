@@ -6,7 +6,7 @@
     gtk.enable = true;
     x11.enable = true;
     hyprcursor.enable = true;
-    name = "MacTahoe-dark-cursors";
+    name = "MacTahoe-cursors";
     package = pkgs.callPackage ../../../pkgs/mactahoe-cursors {};
     size = 36;
   };
