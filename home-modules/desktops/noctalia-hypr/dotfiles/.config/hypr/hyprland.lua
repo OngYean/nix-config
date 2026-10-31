@@ -25,7 +25,7 @@ hl.config({
 
     binds = {
         scroll_event_delay = 0,
-        --drag_center_window = false,
+        drag_center_window = false,
     },
     
     render = {
