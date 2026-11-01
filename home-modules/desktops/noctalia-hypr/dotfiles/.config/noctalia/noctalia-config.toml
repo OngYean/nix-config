@@ -409,11 +409,11 @@ widget_order = [
         background = false
         background_opacity = 0.0
         center_text = true
-        format = "{:%A, %B %d}"
+        format = "{:%A, %B %-d}"
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
     box_height = 160.0
-    box_width = 288.0
+    box_width = 304.0
     cx = 960.0
     cy = 204.0
     output = "DP-2"
@@ -445,7 +445,7 @@ widget_order = [
         background = false
         background_opacity = 0.0
         center_text = true
-        format = "{:%A, %B %d}"
+        format = "{:%A, %B %-d}"
 
 [notification]
 background_opacity = 0.24999999441206455
