@@ -658,6 +658,10 @@ hide_when_no_media = true
 max_length = 320
 title_scroll = "on_hover"
 
+    [widget.media.actions]
+    scroll_down = "media next"
+    scroll_up = "media previous"
+
 [widget.network]
 show_label = false
 show_vpn_label = true
