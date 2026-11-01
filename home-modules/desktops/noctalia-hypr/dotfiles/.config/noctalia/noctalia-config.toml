@@ -6,7 +6,7 @@ sound_volume = 0.74999998323619366
 background_opacity = 0.4999999888241291
 center = [ "workspaces" ]
 end = [
-    "updates",
+    "privacy",
     "tray",
     "notifications",
     "brightness",
@@ -19,7 +19,7 @@ end = [
 ]
 margin_ends = 0
 radius = 20
-start = [ "session", "active_window", "wallhaven", "cpu", "status", "media", "privacy" ]
+start = [ "session", "cpu", "status", "media" ]
 widget_spacing = 16
 
 [bluetooth]
@@ -545,8 +545,67 @@ time_format = "{:%-I:%M %p}"
 
     [shell.session]
     grid = true
-    grid_columns = 1
+    grid_columns = 4
     show_shortcuts = false
+
+        [[shell.session.actions]]
+        action = "command"
+        command = "noctalia msg panel-open noctalia/wallhaven:browser"
+        countdown_seconds = 0.0
+        enabled = true
+        glyph = "wallpaper-selector"
+        label = "Wallhaven"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "command"
+        command = "noctalia msg panel-open dmopp/nixos-updates:panel"
+        countdown_seconds = 0.0
+        enabled = true
+        glyph = "snowflake"
+        label = "NixOS Updates"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "lock"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "1"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "logout"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "2"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "suspend"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "3"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "reboot"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "4"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "reboot_uefi"
+        countdown_seconds = 0.0
+        enabled = true
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "shutdown"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "5"
+        variant = "destructive"
 
     [shell.window_switcher]
     mru = true
