@@ -8,6 +8,7 @@
     ./git.nix
     ./locale.nix
     ./networking.nix
+    ./packages.nix
     ./pipewire.nix
     ./power-management.nix
   ];
