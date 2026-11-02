@@ -10,6 +10,7 @@
     ../../modules/gaming.nix
     ../../modules/hyprland.nix
     ../../modules/kde-file-management.nix
+    ../../modules/music-production.nix
     ../../modules/phone-connect.nix
     ../../modules/secure-boot.nix
     ../../modules/services.nix

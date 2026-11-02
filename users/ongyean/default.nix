@@ -26,7 +26,6 @@
       ../../home-modules/desktops/noctalia-hypr
       ../../home-modules/gaming.nix
       ../../home-modules/multimedia.nix
-      ../../home-modules/music-production.nix
       ../../home-modules/neovim.nix
       ../../home-modules/office.nix
       ../../home-modules/uwsm.nix
@@ -36,8 +35,6 @@
 
     # Again, NEVER CHANGE THIS
     home.stateVersion = "26.05";
-
-    # TODO: Install telegram
 
     # Add Chinese and Japanese IME for this user
     i18n.inputMethod.fcitx5.addons = with pkgs; [
