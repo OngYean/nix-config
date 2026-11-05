@@ -17,96 +17,13 @@ in
 {
   imports = [
     ./theme.nix
+    ../../uwsm.nix
   ];
 
   programs = {
     noctalia = {
       enable = true;
       systemd.enable = true;
-    };
-
-    # NOTE: Please set the user's shell to zsh in NixOS config
-    zsh = {
-      enable = true;
-      autocd = true;
-      autosuggestion.enable = true;
-      defaultKeymap = "viins";
-      fastSyntaxHighlighting.enable = true;
-    };
-
-    zed-editor = {
-      enable = true;
-      enableMcpIntegration = true;
-
-      extensions = [
-        "catppuccin"
-        "csv"
-        "dockerfile"
-        "env"
-        "html"
-        "ini"
-        "java"
-        "log"
-        "lua"
-        "make"
-        "material-icon-theme"
-        "nix"
-        "php"
-        "sql"
-        "toml"
-        "xml"
-      ];
-
-      extraPackages = with pkgs; [
-        # Language servers
-        docker-language-server
-        dockerfile-language-server
-        vscode-html-languageserver
-        jdt-language-server
-        lua-language-server
-        nil
-        nixd
-        intelephense
-        phpactor
-        phpantom-lsp
-
-        # OpenCode dependencies
-        nodejs-slim
-      ];
-
-      userSettings = {
-        agent = {
-          default_profile = "write";
-          dock = "right";
-        };
-        auto_update = false;
-        base_keymap = "VSCode";
-        buffer_font_family = "JetBrains Mono";
-        buffer_font_size = 13;
-        format_on_save = "modifications";
-        icon_theme = "Material Icon Theme";
-        outline_panel.dock = "left";
-        project_panel = {
-          entry_spacing = "standard";
-          dock = "left";
-        };
-        search.button = false;
-        telemetry = {
-          diagnostics = false;
-          metrics = false;
-        };
-        title_bar = {
-          button_layout = "platform_default";
-          show_menus = true;
-          show_sign_in = false;
-          show_user_picture = false;
-        };
-        ui_font_family = "Inter";
-        ui_font_size = 16;
-        ui_font_weight = 400.0;
-        vim.use_system_clipboard = "on_yank";
-        vim_mode = true;
-      };
     };
 
     antigravity-cli = {
@@ -138,12 +55,8 @@ in
   };
 
   home.packages = with pkgs; [
-    brave-origin
     resources
     kdePackages.kcalc
-    spotifast
-    zapfast
-    telegram-desktop
   ];
 
   wayland.windowManager.hyprland = {
@@ -161,8 +74,8 @@ in
   # Desktop entry override for Noctalia
   xdg.desktopEntries = {
     "dev.noctalia.Noctalia" = {
-      name = "System Settings";
-      comment = "System settings for Noctalia shell";
+      name = "Noctalia Settings";
+      comment = "Settings for Noctalia shell";
       exec = "${config.programs.noctalia.package}/bin/noctalia msg settings-open";
       icon = "preferences-system";
       terminal = false;
@@ -172,17 +85,6 @@ in
       ];
       startupNotify = false;
     };
-  };
-
-  # Set Brave Origin as the default web browser
-  xdg.mimeApps.defaultApplications = {
-    "x-scheme-handler/http" = "brave-origin.desktop";
-    "x-scheme-handler/https" = "brave-origin.desktop";
-    "x-scheme-handler/about" = "brave-origin.desktop";
-    "x-scheme-handler/unknown" = "brave-origin.desktop";
-
-    "text/html" = "brave-origin.desktop";
-    "application/xhtml+xml" = "brave-origin.desktop";
   };
 
   # Reload Hyprland config

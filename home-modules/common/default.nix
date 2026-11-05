@@ -9,7 +9,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
-    startAsUserService = true;
+    # startAsUserService = true;
 
     sharedModules = [
       ./input-method.nix
