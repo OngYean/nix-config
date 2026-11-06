@@ -181,15 +181,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1793700807,
-        "narHash": "sha256-rlk5KnpRVxo9WW+ZzEuNJj0zvffk4Pc298g4LDApVjE=",
+        "lastModified": 1793866126,
+        "narHash": "sha256-745t9LtS8FSUQQxsiajdL913Dw7vhnQxC3Do2kMvS1g=",
         "owner": "OngYean",
         "repo": "MacShell-KWin",
-        "rev": "d53665e639695c099da53b58ba6855a8af3bef31",
+        "rev": "3a1e8a954464902c681ffbb056bfe5b45023a08b",
         "type": "github"
       },
       "original": {
         "owner": "OngYean",
+        "ref": "experimental",
         "repo": "MacShell-KWin",
         "type": "github"
       }
