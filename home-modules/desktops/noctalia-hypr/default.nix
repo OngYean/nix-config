@@ -48,10 +48,6 @@ in
         scrolling.history = 3023;
       };
     };
-
-    fastfetch = {
-      enable = true;
-    };
   };
 
   home.packages = with pkgs; [

@@ -6,5 +6,6 @@
     btop
     psmisc
     lsof
+    fastfetch
   ];
 }
