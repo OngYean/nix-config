@@ -15,7 +15,7 @@ in
     x11.enable = true;
     name = "MacTahoe-cursors";
     package = pkgs.callPackage ../../../pkgs/mactahoe-cursors {};
-    size = 36;
+    size = 32;
     # TODO: Add kcminputrc config
   };
 
@@ -48,26 +48,9 @@ in
       size = 10;
       package = pkgs.inter;
     };
-    # gtk3.extraConfig = {
-    #   gtk-application-prefer-dark-theme = true;
-    # };
-    # gtk4.extraConfig = {
-    #   gtk-application-prefer-dark-theme = true;
-    # };
   };
-
-  # dconf.settings = {
-  #   "org/gnome/desktop/interface" = {
-  #     color-scheme = "prefer-dark"; # Essential for GTK4/Libadwaita apps to turn dark
-  #     gtk-theme = "adw-gtk3-dark";
-  #   };
-  # };
 
   qt.kde.settings = {
     kdeglobals.Icons.Theme = "MacTahoe-dark";
   };
-
-  # home.activation.gtk4ThemeSymlink = lib.hm.dag.entryAfter ["writeBoundary"] ''
-  #   $DRY_RUN_CMD ln -sf ${mactahoeGtkTheme}/share/gtk-4.0/* ${config.home.homeDirectory}/.config/gtk-4.0
-  # '';
 }
