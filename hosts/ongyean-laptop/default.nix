@@ -8,7 +8,7 @@
     ../../modules/common
     ../../modules/ddcutil.nix
     ../../modules/gaming.nix
-    ../../modules/hyprland.nix
+    ../../modules/desktops/hyprland.nix
     ../../modules/kde-file-management.nix
     ../../modules/music-production.nix
     ../../modules/phone-connect.nix
