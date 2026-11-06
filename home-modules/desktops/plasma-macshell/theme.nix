@@ -1,5 +1,13 @@
 { config, lib, pkgs, inputs, ... }:
 
+let
+  mactahoeGtkTheme = pkgs.callPackage ../../../pkgs/mactahoe-gtk-theme {
+    blur = true;
+    libadwaita = true;
+    roundedMaxWindow = true;
+    darkerColor = true;
+  };
+in
 {
   home.pointerCursor = {
     enable = true;
@@ -20,12 +28,21 @@
 
   gtk = {
     enable = true;
+
     theme = {
-      name = "adw-gtk3-dark";
-      package = pkgs.adw-gtk3;
+      name = "MacTahoe-Dark";
+      package = mactahoeGtkTheme;
     };
+
+    # GTK4 requires explicit declaration
+    gtk4.theme = {
+      name = "MacTahoe-Dark";
+      package = mactahoeGtkTheme;
+    };
+
     iconTheme.name = "MacTahoe-dark";
     iconTheme.package = pkgs.callPackage ../../../pkgs/mactahoe-icon-theme {};
+
     font = {
       name = "Inter";
       size = 10;
@@ -49,4 +66,8 @@
   qt.kde.settings = {
     kdeglobals.Icons.Theme = "MacTahoe-dark";
   };
+
+  # home.activation.gtk4ThemeSymlink = lib.hm.dag.entryAfter ["writeBoundary"] ''
+  #   $DRY_RUN_CMD ln -sf ${mactahoeGtkTheme}/share/gtk-4.0/* ${config.home.homeDirectory}/.config/gtk-4.0
+  # '';
 }
