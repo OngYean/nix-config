@@ -6,6 +6,8 @@
     enableDefaultPackages = true;
     packages = with pkgs; [
       corefonts # Microsoft's core fonts
+      inter
+      jetbrains-mono
     ];
   };
 }
