@@ -24,8 +24,10 @@
 
   home-manager.users.ongyean = {
     imports = [
+      # For each user, ONLY enable one config file from desktops dir
       # ../../home-modules/desktops/noctalia-hypr
       ../../home-modules/desktops/plasma-macshell
+
       ../../home-modules/shells/zsh.nix
       ../../home-modules/gaming.nix
       ../../home-modules/apps/internet.nix
