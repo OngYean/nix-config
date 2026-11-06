@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    ../../modules/desktops/kde-plasma.nix
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -23,12 +24,15 @@
 
   home-manager.users.ongyean = {
     imports = [
-      ../../home-modules/desktops/noctalia-hypr
+      # ../../home-modules/desktops/noctalia-hypr
+      ../../home-modules/desktops/plasma-macshell
+      ../../home-modules/shells/zsh.nix
       ../../home-modules/gaming.nix
-      ../../home-modules/multimedia.nix
-      ../../home-modules/neovim.nix
-      ../../home-modules/office.nix
-      ../../home-modules/uwsm.nix
+      ../../home-modules/apps/internet.nix
+      ../../home-modules/apps/multimedia.nix
+      ../../home-modules/apps/neovim.nix
+      ../../home-modules/apps/office.nix
+      ../../home-modules/apps/zed-editor.nix
     ];
     home.username = "ongyean";
     home.homeDirectory = "/home/ongyean";
