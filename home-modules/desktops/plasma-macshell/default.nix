@@ -3,13 +3,8 @@
 
 {
   imports = [
+    ./theme.nix
     inputs.macshell-kwin.homeManagerModules.macshell
-  ];
-
-  home.packages = with pkgs; [
-    klassy
-    darkly
-    inputs.kwin-effects-glass.packages.${stdenv.hostPlatform.system}.default
   ];
 
   programs.macshell = {
