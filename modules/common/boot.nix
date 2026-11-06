@@ -29,7 +29,6 @@
       enable = true;
       themePackages = [ (pkgs.callPackage ../../pkgs/darwin-plymouth {}) ];
       theme = "darwin";
-      font = "${pkgs.inter}/share/fonts/truetype/InterVariable.ttf";
     };
   };
 }
