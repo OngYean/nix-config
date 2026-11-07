@@ -11,4 +11,7 @@
     enable = true;
     autostart = true;
   };
+
+  # KDE Plasma already launches fcitx5 via XDG autostart
+  i18n.inputMethod.fcitx5.systemd.enable = false;
 }
