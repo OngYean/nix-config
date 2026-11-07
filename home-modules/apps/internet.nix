@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -18,4 +18,10 @@
     "text/html" = "brave-origin.desktop";
     "application/xhtml+xml" = "brave-origin.desktop";
   };
+
+  # Pull Noto Sans CJK and expose only the heavier weights to Spotifast and ZapFast
+  home.activation.fastAppsCJKFont = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    $DRY_RUN_CMD mkdir -p ${config.home.homeDirectory}/.local/share/fonts
+    $DRY_RUN_CMD ln -sf ${pkgs.noto-fonts-cjk-sans-static}/share/fonts/opentype/noto-cjk/NotoSansCJK-Bold.ttc ${config.home.homeDirectory}/.local/share/fonts/
+  '';
 }

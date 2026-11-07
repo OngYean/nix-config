@@ -94,18 +94,10 @@ in
     kdeglobals.General.TerminalService = "Alacritty.desktop";
   };
 
-  home.activation = {
-    # Remove stale ksycoca6 cache files
-    removeKsycoca6 = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      $DRY_RUN_CMD rm -f ${config.home.homeDirectory}/.cache/ksycoca6_en_*
-    '';
-
-    # Pull Noto Sans CJK and expose only the heavier weights to Spotifast and ZapFast
-    fastAppsCJKFont = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      $DRY_RUN_CMD mkdir -p ${config.home.homeDirectory}/.local/share/fonts
-      $DRY_RUN_CMD ln -sf ${pkgs.noto-fonts-cjk-sans-static}/share/fonts/opentype/noto-cjk/NotoSansCJK-Bold.ttc ${config.home.homeDirectory}/.local/share/fonts/
-    '';
-  };
+  # Remove stale ksycoca6 cache files
+  home.activation.removeKsycoca6 = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    $DRY_RUN_CMD rm -f ${config.home.homeDirectory}/.cache/ksycoca6_en_*
+  '';
 
   # Link dotfiles to the real locations
   xdg.configFile = mkLinks dotfilesConfig;
