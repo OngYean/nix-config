@@ -3,8 +3,28 @@
 {
   home.packages = with pkgs; [
     brave-origin
-    spotifast
-    zapfast
+    (symlinkJoin {
+      name = "spotifast-patched";
+      paths = [ pkgs.spotifast ];
+      postBuild = ''
+        rm $out/share/applications/spotifast.desktop
+        substitute ${pkgs.spotifast}/share/applications/spotifast.desktop \
+          $out/share/applications/spotifast.desktop \
+          --replace-fail "Icon=spotifast" "Icon=spotify" \
+          --replace-fail "Name=Spotifast" "Name=Spotify"
+      '';
+    })
+    (symlinkJoin {
+      name = "zapfast-patched";
+      paths = [ pkgs.zapfast ];
+      postBuild = ''
+        rm $out/share/applications/zapfast.desktop
+        substitute ${pkgs.zapfast}/share/applications/zapfast.desktop \
+          $out/share/applications/zapfast.desktop \
+          --replace-fail "Icon=zapfast" "Icon=whatsapp" \
+          --replace-fail "Name=ZapFast" "Name=WhatsApp"
+      '';
+    })
     telegram-desktop
   ];
 
