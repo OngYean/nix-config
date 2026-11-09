@@ -23,6 +23,8 @@ in
         preset = 2; # Show horizontal overlay
         font_file = "${pkgs.inter}/share/fonts/truetype/InterVariable.ttf"; # Use Inter font
         no_display = true; # Hide the HUD by default
+        cpu_temp = true;
+        gpu_temp = true;
       };
     };
   };
