@@ -20,7 +20,7 @@
     kwin-effects-glass.url = "github:4v3ngR/kwin-effects-glass";
     kwin-effects-glass.inputs.nixpkgs.follows = "nixpkgs";
 
-    macshell-kwin.url = "github:OngYean/MacShell-KWin/experimental";
+    macshell-kwin.url = "github:OngYean/MacShell-KWin/pending-test";
     macshell-kwin.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = inputs@{ self, nixpkgs, nixpkgs-old, home-manager, plasma-manager, chaotic, lanzaboote, kwin-effects-glass, macshell-kwin, ... }: {
