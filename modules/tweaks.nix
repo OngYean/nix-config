@@ -84,9 +84,9 @@
   ];
 
   # Custom SCX CPU scheduler
-  services.scx = {
+  services.scx-loader = {
     enable = true;
-    scheduler = lib.mkDefault "scx_bpfland";
+    config.default_sched = lib.mkDefault "scx_bpfland";
   };
 
   # I/O optimizations for / and /home
