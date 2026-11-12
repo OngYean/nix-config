@@ -1,5 +1,17 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 
+let
+  oldPkgs = import inputs.nixpkgs-old {
+    system = pkgs.stdenv.hostPlatform.system;
+    config.allowUnfree = true;
+  };
+in
 {
   home.packages = with pkgs; [
     brave-origin
@@ -16,10 +28,10 @@
     })
     (symlinkJoin {
       name = "zapfast-patched";
-      paths = [ pkgs.zapfast ];
+      paths = [ oldPkgs.zapfast ];
       postBuild = ''
         rm $out/share/applications/zapfast.desktop
-        substitute ${pkgs.zapfast}/share/applications/zapfast.desktop \
+        substitute ${oldPkgs.zapfast}/share/applications/zapfast.desktop \
           $out/share/applications/zapfast.desktop \
           --replace-fail "Icon=zapfast" "Icon=whatsapp" \
           --replace-fail "Name=ZapFast" "Name=WhatsApp"
