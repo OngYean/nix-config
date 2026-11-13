@@ -1,13 +1,7 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
-let
-  oldPkgs = import inputs.nixpkgs-old {
-    system = pkgs.stdenv.hostPlatform.system;
-    config.allowUnfree = true;
-  };
-in
 {
-  environment.systemPackages = with oldPkgs; [
+  environment.systemPackages = with pkgs; [
     reaper
     qjackctl
     guitarix
