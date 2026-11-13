@@ -2,7 +2,6 @@
 
 let
   mactahoeGtkTheme = pkgs.callPackage ../../../pkgs/mactahoe-gtk-theme {
-    blur = true;
     libadwaita = true;
     roundedMaxWindow = true;
     darkerColor = true;
