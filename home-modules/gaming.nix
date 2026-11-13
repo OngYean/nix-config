@@ -12,10 +12,7 @@ in
   };
 
   programs = {
-    discord = {
-      enable = true;
-      settings.SKIP_HOST_UPDATE = true;
-    };
+    discord.enable = true;
 
     mangohud = {
       enable = true;
