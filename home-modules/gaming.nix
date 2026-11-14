@@ -12,8 +12,6 @@ in
   };
 
   programs = {
-    discord.enable = true;
-
     mangohud = {
       enable = true;
       settings = {
@@ -30,6 +28,8 @@ in
     # Games
     osu-lazer-bin
     prismlauncher
+
+    discord
 
     # Custom shell script binaries for Proton games
     # ===========================
