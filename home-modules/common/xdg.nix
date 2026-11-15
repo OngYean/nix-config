@@ -10,6 +10,7 @@ in
   xdg = {
     enable = true;
     mimeApps.enable = true;
+    autostart.enable = true;
     userDirs = {
       enable = true;
       createDirectories = true;
