@@ -10,6 +10,7 @@
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
     backupFileExtension = "bak";
+    overwriteBackup = true;
 
     sharedModules = [
       ./input-method.nix
