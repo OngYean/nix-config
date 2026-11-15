@@ -31,6 +31,7 @@
       ../../home-modules/shells/zsh.nix
       ../../home-modules/gaming.nix
       ../../home-modules/apps/internet.nix
+      ../../home-modules/apps/keepassxc.nix
       ../../home-modules/apps/multimedia.nix
       ../../home-modules/apps/neovim.nix
       ../../home-modules/apps/office.nix

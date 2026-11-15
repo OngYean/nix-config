@@ -44,6 +44,13 @@
     "application/xhtml+xml" = "brave-origin.desktop";
   };
 
+  # Allow KeePassXC browser integration on Brave Origin
+  programs.keepassxc.settings.Browser = {
+    UseCustomBrowser = true;
+    CustomBrowserType = 1;
+    CustomBrowserLocation = "~/.config/BraveSoftware/Brave-Origin/NativeMessagingHosts";
+  };
+
   # Pull Noto Sans CJK and expose only the heavier weights to Spotifast and ZapFast
   home.activation.fastAppsCJKFont = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     $DRY_RUN_CMD mkdir -p ${config.home.homeDirectory}/.local/share/fonts
