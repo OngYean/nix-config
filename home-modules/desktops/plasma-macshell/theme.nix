@@ -4,7 +4,6 @@ let
   mactahoeGtkTheme = pkgs.callPackage ../../../pkgs/mactahoe-gtk-theme {
     libadwaita = true;
     roundedMaxWindow = true;
-    darkerColor = true;
   };
 in
 {
