@@ -32,6 +32,6 @@
     in
     pkgs.writeShellScriptBin name ''
       ${envStr}
-      nvidia-offload ${wrapperCmd} ${pkgs.umu-launcher}/bin/umu-run "${exePath}"
+      ${wrapperCmd} ${pkgs.umu-launcher}/bin/umu-run "${exePath}"
     ''; # Note that for setups not using NVIDIA PRIME, dummy nvidia-offload script should be used
 }
