@@ -8,7 +8,6 @@
     ../../modules/common
     ../../modules/ddcutil.nix
     ../../modules/gaming.nix
-    ../../modules/desktops/hyprland.nix
     ../../modules/kde-file-management.nix
     ../../modules/music-production.nix
     ../../modules/phone-connect.nix
@@ -101,7 +100,7 @@
     power_mizer_mode = "Auto";
     min_core_clock = 210;
     max_core_clock = 1950;
-    gpu_clock_offsets."0" = 220;
-  	mem_clock_offsets."0" = 1000;
+    gpu_clock_offsets."0" = 200;
+  	mem_clock_offsets."0" = 0;
   };
 }
