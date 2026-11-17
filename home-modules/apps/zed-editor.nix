@@ -46,6 +46,7 @@ programs.zed-editor = {
           default_profile = "write";
           dock = "right";
         };
+        window_decorations = "server";
         auto_update = false;
         base_keymap = "VSCode";
         buffer_font_family = "JetBrains Mono";
