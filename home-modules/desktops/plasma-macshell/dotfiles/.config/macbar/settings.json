@@ -156,7 +156,7 @@
   "notifDnd": false,
   "dnd": false,
   "nightOn": false,
-  "keepAwake": true,
+  "keepAwake": false,
   "kbRepeatRate": 35,
   "kbRepeatDelay": 250,
   "mouseSens": 0,
