@@ -1,0 +1,6 @@
+[Common]
+ButtonHeight=1
+CornerRadius=10
+
+[Style]
+TabBarDrawCenteredTabs=true
