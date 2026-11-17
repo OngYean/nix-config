@@ -574,8 +574,9 @@
         4;
       kwinrc."Tiling/5d473c46-b5b7-474d-8d76-e6383ff77518/b8b84c9f-6a8a-4b5f-ae67-c8acdbdce087".tiles =
         "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
-      kwinrc.Wayland."InputMethod/\$e" =
+      kwinrc.Wayland."InputMethod".value =
         "/etc/profiles/per-user/ongyean/share/applications/fcitx5-wayland-launcher.desktop";
+      kwinrc.Wayland."InputMethod".shellExpand = true;
       kwinrc.Xwayland.Scale = 1.25;
       kwinrc."org.kde.kdecoration2".BorderSize = "None";
       kwinrc."org.kde.kdecoration2".BorderSizeAuto = false;
@@ -600,6 +601,16 @@
       spectaclerc.VideoSave.translatedScreencastsFolder = "Screencasts";
       spectaclerc.ViewerWindow."2 screens: Height" = 570;
       spectaclerc.ViewerWindow."2 screens: Width" = 708;
+    };
+    dataFile = {
+      "applications/net.local.macshell.desktop"."Desktop Entry" = {
+        Exec = "macshell ipc call spotlight toggle";
+        Name = "MacShell Spotlight";
+        NoDisplay = true;
+        StartupNotify = false;
+        Type = "Application";
+        "X-KDE-GlobalAccel-CommandShortcut" = true;
+      };
     };
   };
 }
