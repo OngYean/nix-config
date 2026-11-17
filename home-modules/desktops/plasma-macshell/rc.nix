@@ -373,9 +373,9 @@
       kcminputrc.Mouse.cursorSize = 32;
       kcminputrc.Mouse.cursorTheme = "MacTahoe-cursors";
       kded5rc.Module-device_automounter.autoload = false;
-      kdeglobals.General.AccentColor = "184,117,220";
+      # kdeglobals.General.AccentColor = "184,117,220";
       kdeglobals.General.ColorScheme = "BreezeDark";
-      kdeglobals.General.LastUsedCustomAccentColor = "184,117,220";
+      # kdeglobals.General.LastUsedCustomAccentColor = "184,117,220";
       kdeglobals."Colors:Button".BackgroundAlternate = "55,135,177";
       kdeglobals."Colors:Button".BackgroundNormal = "41,44,48";
       kdeglobals."Colors:Button".DecorationFocus = "61,174,233";
