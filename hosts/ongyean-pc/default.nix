@@ -26,7 +26,6 @@ in
     ../../modules/common
     ../../modules/ddcutil.nix
     ../../modules/gaming.nix
-    ../../modules/desktops/hyprland.nix
     ../../modules/kde-file-management.nix
     ../../modules/phone-connect.nix
     ../../modules/secure-boot.nix
