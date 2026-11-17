@@ -180,11 +180,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794553446,
-        "narHash": "sha256-zmuZYqmJsuBwfRAHU3kwNY6UVIlhzl0zd2iXOAab34g=",
+        "lastModified": 1794811795,
+        "narHash": "sha256-fN6UjzziUj+a/0XIZj3JS28fW690w22qTpio8k9KyzA=",
         "owner": "OngYean",
         "repo": "MacShell-KWin",
-        "rev": "266f7c3bc2bde674ef3faeef75df30a53e7d6cae",
+        "rev": "b44161d088d3122684f2a413b039aeee42a18603",
         "type": "github"
       },
       "original": {
