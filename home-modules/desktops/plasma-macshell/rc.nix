@@ -13,7 +13,10 @@
       kmix.increase_microphone_volume = "Microphone Volume Up";
       kmix.increase_volume = "Volume Up";
       kmix.increase_volume_small = "Shift+Volume Up";
-      kmix.mic_mute = ["Microphone Mute" "Meta+Volume Mute"];
+      kmix.mic_mute = [
+        "Microphone Mute"
+        "Meta+Volume Mute"
+      ];
       kmix.mute = "Volume Mute";
       kmix.push_to_talk = [ ];
       ksmserver."Halt Without Confirmation" = [ ];
@@ -29,9 +32,19 @@
       kwin."Cycle Overview Opposite" = [ ];
       kwin."Decrease Opacity" = [ ];
       kwin."Edit Tiles" = [ ];
-      kwin.Expose = ["Ctrl+F9" "Meta+F9"];
-      kwin.ExposeAll = ["Launch (C)" "Ctrl+F10" "Meta+F10"];
-      kwin.ExposeClass = ["Ctrl+F7" "Meta+F7"];
+      kwin.Expose = [
+        "Ctrl+F9"
+        "Meta+F9"
+      ];
+      kwin.ExposeAll = [
+        "Launch (C)"
+        "Ctrl+F10"
+        "Meta+F10"
+      ];
+      kwin.ExposeClass = [
+        "Ctrl+F7"
+        "Meta+F7"
+      ];
       kwin.ExposeClassCurrentDesktop = [ ];
       kwin."Grid View" = "Meta+G";
       kwin."Increase Opacity" = [ ];
@@ -54,7 +67,10 @@
       kwin."Switch Window Left" = "Meta+Alt+Left";
       kwin."Switch Window Right" = "Meta+Alt+Right";
       kwin."Switch Window Up" = "Meta+Alt+Up";
-      kwin."Switch to Desktop 1" = ["Ctrl+F1" "Meta+F1"];
+      kwin."Switch to Desktop 1" = [
+        "Ctrl+F1"
+        "Meta+F1"
+      ];
       kwin."Switch to Desktop 10" = [ ];
       kwin."Switch to Desktop 11" = [ ];
       kwin."Switch to Desktop 12" = [ ];
@@ -65,15 +81,24 @@
       kwin."Switch to Desktop 17" = [ ];
       kwin."Switch to Desktop 18" = [ ];
       kwin."Switch to Desktop 19" = [ ];
-      kwin."Switch to Desktop 2" = ["Ctrl+F2" "Meta+F2"];
+      kwin."Switch to Desktop 2" = [
+        "Ctrl+F2"
+        "Meta+F2"
+      ];
       kwin."Switch to Desktop 20" = [ ];
       kwin."Switch to Desktop 21" = [ ];
       kwin."Switch to Desktop 22" = [ ];
       kwin."Switch to Desktop 23" = [ ];
       kwin."Switch to Desktop 24" = [ ];
       kwin."Switch to Desktop 25" = [ ];
-      kwin."Switch to Desktop 3" = ["Ctrl+F3" "Meta+F3"];
-      kwin."Switch to Desktop 4" = ["Ctrl+F4" "Meta+F4"];
+      kwin."Switch to Desktop 3" = [
+        "Ctrl+F3"
+        "Meta+F3"
+      ];
+      kwin."Switch to Desktop 4" = [
+        "Ctrl+F4"
+        "Meta+F4"
+      ];
       kwin."Switch to Desktop 5" = [ ];
       kwin."Switch to Desktop 6" = [ ];
       kwin."Switch to Desktop 7" = [ ];
@@ -98,12 +123,24 @@
       kwin."Toggle Night Color" = [ ];
       kwin."Toggle Show Compositing" = [ ];
       kwin."Toggle Window Raise/Lower" = [ ];
-      kwin."Walk Through Windows" = ["Alt+Tab" "Meta+Tab"];
-      kwin."Walk Through Windows (Reverse)" = ["Alt+Shift+Tab" "Meta+Shift+Tab"];
+      kwin."Walk Through Windows" = [
+        "Alt+Tab"
+        "Meta+Tab"
+      ];
+      kwin."Walk Through Windows (Reverse)" = [
+        "Alt+Shift+Tab"
+        "Meta+Shift+Tab"
+      ];
       kwin."Walk Through Windows Alternative" = [ ];
       kwin."Walk Through Windows Alternative (Reverse)" = [ ];
-      kwin."Walk Through Windows of Current Application" = ["Alt+`" "Meta+`"];
-      kwin."Walk Through Windows of Current Application (Reverse)" = ["Alt+~" "Meta+~"];
+      kwin."Walk Through Windows of Current Application" = [
+        "Alt+`"
+        "Meta+`"
+      ];
+      kwin."Walk Through Windows of Current Application (Reverse)" = [
+        "Alt+~"
+        "Meta+~"
+      ];
       kwin."Walk Through Windows of Current Application Alternative" = [ ];
       kwin."Walk Through Windows of Current Application Alternative (Reverse)" = [ ];
       kwin."Window Above Other Windows" = [ ];
@@ -190,7 +227,10 @@
       kwin."Window to Screen 7" = [ ];
       kwin.disableInputCapture = "Meta+Shift+Esc";
       kwin.view_actual_size = "Meta+0";
-      kwin.view_zoom_in = ["Meta++" "Meta+="];
+      kwin.view_zoom_in = [
+        "Meta++"
+        "Meta+="
+      ];
       kwin.view_zoom_out = "Meta+-";
       "kwin/$InverseAction"."Cycle Overview Opposite" = "Cycle Overview";
       "kwin/$InverseAction"."Increase Opacity" = "Decrease Opacity";
@@ -205,9 +245,12 @@
       "kwin/$InverseAction"."Switch to Screen Below" = "Switch to Screen Above";
       "kwin/$InverseAction"."Switch to Screen to the Right" = "Switch to Screen to the Left";
       "kwin/$InverseAction"."Walk Through Windows" = "Walk Through Windows (Reverse)";
-      "kwin/$InverseAction"."Walk Through Windows Alternative" = "Walk Through Windows Alternative (Reverse)";
-      "kwin/$InverseAction"."Walk Through Windows of Current Application" = "Walk Through Windows of Current Application (Reverse)";
-      "kwin/$InverseAction"."Walk Through Windows of Current Application Alternative (Reverse)" = "Walk Through Windows of Current Application Alternative";
+      "kwin/$InverseAction"."Walk Through Windows Alternative" =
+        "Walk Through Windows Alternative (Reverse)";
+      "kwin/$InverseAction"."Walk Through Windows of Current Application" =
+        "Walk Through Windows of Current Application (Reverse)";
+      "kwin/$InverseAction"."Walk Through Windows of Current Application Alternative (Reverse)" =
+        "Walk Through Windows of Current Application Alternative";
       "kwin/$InverseAction"."Window Grow Horizontal" = "Window Shrink Horizontal";
       "kwin/$InverseAction"."Window Grow Vertical" = "Window Shrink Vertical";
       "kwin/$InverseAction"."Window Lower" = "Window Raise";
@@ -244,9 +287,15 @@
       org_kde_powerdevil.Sleep = "Sleep";
       org_kde_powerdevil."Toggle Keyboard Backlight" = "Keyboard Light On/Off";
       org_kde_powerdevil."Turn Off Screen" = [ ];
-      org_kde_powerdevil.powerProfile = ["Battery" "Meta+B"];
+      org_kde_powerdevil.powerProfile = [
+        "Battery"
+        "Meta+B"
+      ];
       plasmashell."Slideshow Wallpaper Next Image" = [ ];
-      plasmashell."activate application launcher" = ["Meta" "Alt+F1"];
+      plasmashell."activate application launcher" = [
+        "Meta"
+        "Alt+F1"
+      ];
       plasmashell."activate next task manager entry" = "Meta+Ctrl+PgDown";
       plasmashell."activate previous task manager entry" = "Meta+Ctrl+PgUp";
       plasmashell."activate task manager entry 1" = "Meta+1";
@@ -327,6 +376,102 @@
       kdeglobals.General.AccentColor = "184,117,220";
       kdeglobals.General.ColorScheme = "BreezeDark";
       kdeglobals.General.LastUsedCustomAccentColor = "184,117,220";
+      kdeglobals."Colors:Button".BackgroundAlternate = "55,135,177";
+      kdeglobals."Colors:Button".BackgroundNormal = "41,44,48";
+      kdeglobals."Colors:Button".DecorationFocus = "61,174,233";
+      kdeglobals."Colors:Button".DecorationHover = "61,174,233";
+      kdeglobals."Colors:Button".ForegroundActive = "61,174,233";
+      kdeglobals."Colors:Button".ForegroundInactive = "161,169,177";
+      kdeglobals."Colors:Button".ForegroundLink = "61,174,233";
+      kdeglobals."Colors:Button".ForegroundNegative = "218,68,83";
+      kdeglobals."Colors:Button".ForegroundNeutral = "246,116,0";
+      kdeglobals."Colors:Button".ForegroundNormal = "252,252,252";
+      kdeglobals."Colors:Button".ForegroundPositive = "39,174,96";
+      kdeglobals."Colors:Button".ForegroundVisited = "155,89,182";
+      kdeglobals."Colors:Complementary".BackgroundAlternate = "30,87,116";
+      kdeglobals."Colors:Complementary".BackgroundNormal = "32,35,38";
+      kdeglobals."Colors:Complementary".DecorationFocus = "61,174,233";
+      kdeglobals."Colors:Complementary".DecorationHover = "61,174,233";
+      kdeglobals."Colors:Complementary".ForegroundActive = "61,174,233";
+      kdeglobals."Colors:Complementary".ForegroundInactive = "161,169,177";
+      kdeglobals."Colors:Complementary".ForegroundLink = "61,174,233";
+      kdeglobals."Colors:Complementary".ForegroundNegative = "218,68,83";
+      kdeglobals."Colors:Complementary".ForegroundNeutral = "246,116,0";
+      kdeglobals."Colors:Complementary".ForegroundNormal = "252,252,252";
+      kdeglobals."Colors:Complementary".ForegroundPositive = "39,174,96";
+      kdeglobals."Colors:Complementary".ForegroundVisited = "155,89,182";
+      kdeglobals."Colors:Header".BackgroundAlternate = "32,35,38";
+      kdeglobals."Colors:Header".BackgroundNormal = "41,44,48";
+      kdeglobals."Colors:Header".DecorationFocus = "61,174,233";
+      kdeglobals."Colors:Header".DecorationHover = "61,174,233";
+      kdeglobals."Colors:Header".ForegroundActive = "61,174,233";
+      kdeglobals."Colors:Header".ForegroundInactive = "161,169,177";
+      kdeglobals."Colors:Header".ForegroundLink = "61,174,233";
+      kdeglobals."Colors:Header".ForegroundNegative = "218,68,83";
+      kdeglobals."Colors:Header".ForegroundNeutral = "246,116,0";
+      kdeglobals."Colors:Header".ForegroundNormal = "252,252,252";
+      kdeglobals."Colors:Header".ForegroundPositive = "39,174,96";
+      kdeglobals."Colors:Header".ForegroundVisited = "155,89,182";
+      kdeglobals."Colors:Header][Inactive".BackgroundAlternate = "41,44,48";
+      kdeglobals."Colors:Header][Inactive".BackgroundNormal = "32,35,38";
+      kdeglobals."Colors:Header][Inactive".DecorationFocus = "61,174,233";
+      kdeglobals."Colors:Header][Inactive".DecorationHover = "61,174,233";
+      kdeglobals."Colors:Header][Inactive".ForegroundActive = "61,174,233";
+      kdeglobals."Colors:Header][Inactive".ForegroundInactive = "161,169,177";
+      kdeglobals."Colors:Header][Inactive".ForegroundLink = "29,153,243";
+      kdeglobals."Colors:Header][Inactive".ForegroundNegative = "218,68,83";
+      kdeglobals."Colors:Header][Inactive".ForegroundNeutral = "246,116,0";
+      kdeglobals."Colors:Header][Inactive".ForegroundNormal = "252,252,252";
+      kdeglobals."Colors:Header][Inactive".ForegroundPositive = "39,174,96";
+      kdeglobals."Colors:Header][Inactive".ForegroundVisited = "155,89,182";
+      kdeglobals."Colors:Selection".BackgroundAlternate = "48,128,170";
+      kdeglobals."Colors:Selection".BackgroundNormal = "48,128,170";
+      kdeglobals."Colors:Selection".DecorationFocus = "61,174,233";
+      kdeglobals."Colors:Selection".DecorationHover = "61,174,233";
+      kdeglobals."Colors:Selection".ForegroundActive = "61,174,233";
+      kdeglobals."Colors:Selection".ForegroundInactive = "0,0,0";
+      kdeglobals."Colors:Selection".ForegroundLink = "45,127,170";
+      kdeglobals."Colors:Selection".ForegroundNegative = "176,55,69";
+      kdeglobals."Colors:Selection".ForegroundNeutral = "198,92,0";
+      kdeglobals."Colors:Selection".ForegroundNormal = "0,0,0";
+      kdeglobals."Colors:Selection".ForegroundPositive = "23,104,57";
+      kdeglobals."Colors:Selection".ForegroundVisited = "155,89,182";
+      kdeglobals."Colors:Tooltip".BackgroundAlternate = "32,35,38";
+      kdeglobals."Colors:Tooltip".BackgroundNormal = "41,44,48";
+      kdeglobals."Colors:Tooltip".DecorationFocus = "61,174,233";
+      kdeglobals."Colors:Tooltip".DecorationHover = "61,174,233";
+      kdeglobals."Colors:Tooltip".ForegroundActive = "61,174,233";
+      kdeglobals."Colors:Tooltip".ForegroundInactive = "161,169,177";
+      kdeglobals."Colors:Tooltip".ForegroundLink = "61,174,233";
+      kdeglobals."Colors:Tooltip".ForegroundNegative = "218,68,83";
+      kdeglobals."Colors:Tooltip".ForegroundNeutral = "246,116,0";
+      kdeglobals."Colors:Tooltip".ForegroundNormal = "252,252,252";
+      kdeglobals."Colors:Tooltip".ForegroundPositive = "39,174,96";
+      kdeglobals."Colors:Tooltip".ForegroundVisited = "155,89,182";
+      kdeglobals."Colors:View".BackgroundAlternate = "29,31,34";
+      kdeglobals."Colors:View".BackgroundNormal = "20,22,24";
+      kdeglobals."Colors:View".DecorationFocus = "61,174,233";
+      kdeglobals."Colors:View".DecorationHover = "61,174,233";
+      kdeglobals."Colors:View".ForegroundActive = "61,174,233";
+      kdeglobals."Colors:View".ForegroundInactive = "161,169,177";
+      kdeglobals."Colors:View".ForegroundLink = "61,174,233";
+      kdeglobals."Colors:View".ForegroundNegative = "218,68,83";
+      kdeglobals."Colors:View".ForegroundNeutral = "246,116,0";
+      kdeglobals."Colors:View".ForegroundNormal = "252,252,252";
+      kdeglobals."Colors:View".ForegroundPositive = "39,174,96";
+      kdeglobals."Colors:View".ForegroundVisited = "155,89,182";
+      kdeglobals."Colors:Window".BackgroundAlternate = "41,44,48";
+      kdeglobals."Colors:Window".BackgroundNormal = "32,35,38";
+      kdeglobals."Colors:Window".DecorationFocus = "61,174,233";
+      kdeglobals."Colors:Window".DecorationHover = "61,174,233";
+      kdeglobals."Colors:Window".ForegroundActive = "61,174,233";
+      kdeglobals."Colors:Window".ForegroundInactive = "161,169,177";
+      kdeglobals."Colors:Window".ForegroundLink = "61,174,233";
+      kdeglobals."Colors:Window".ForegroundNegative = "218,68,83";
+      kdeglobals."Colors:Window".ForegroundNeutral = "246,116,0";
+      kdeglobals."Colors:Window".ForegroundNormal = "252,252,252";
+      kdeglobals."Colors:Window".ForegroundPositive = "39,174,96";
+      kdeglobals."Colors:Window".ForegroundVisited = "155,89,182";
       # kdeglobals.General.Name = "Breeze Dark";
       kdeglobals.General.XftAntialias = true;
       kdeglobals.General.XftHintStyle = "hintslight";
@@ -411,16 +556,26 @@
       kwinrc.Plugins.padding = 4;
       kwinrc.Plugins.squashEnabled = false;
       kwinrc.Plugins.tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
-      kwinrc."Tiling/1e786a63-2885-4ffa-82c1-57731b38f936/8ee4ecf8-cc64-491f-8b92-d9f2893b4480".padding = 4;
-      kwinrc."Tiling/1e786a63-2885-4ffa-82c1-57731b38f936/8ee4ecf8-cc64-491f-8b92-d9f2893b4480".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
-      kwinrc."Tiling/1e786a63-2885-4ffa-82c1-57731b38f936/b8b84c9f-6a8a-4b5f-ae67-c8acdbdce087"."[Tiling][5d473c46-b5b7-474d-8d76-e6383ff77518][]" = "";
-      kwinrc."Tiling/1e786a63-2885-4ffa-82c1-57731b38f936/b8b84c9f-6a8a-4b5f-ae67-c8acdbdce087".padding = 4;
-      kwinrc."Tiling/1e786a63-2885-4ffa-82c1-57731b38f936/b8b84c9f-6a8a-4b5f-ae67-c8acdbdce087".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
-      kwinrc."Tiling/5d473c46-b5b7-474d-8d76-e6383ff77518/8ee4ecf8-cc64-491f-8b92-d9f2893b4480".padding = 4;
-      kwinrc."Tiling/5d473c46-b5b7-474d-8d76-e6383ff77518/8ee4ecf8-cc64-491f-8b92-d9f2893b4480".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
-      kwinrc."Tiling/5d473c46-b5b7-474d-8d76-e6383ff77518/b8b84c9f-6a8a-4b5f-ae67-c8acdbdce087".padding = 4;
-      kwinrc."Tiling/5d473c46-b5b7-474d-8d76-e6383ff77518/b8b84c9f-6a8a-4b5f-ae67-c8acdbdce087".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
-      kwinrc.Wayland."InputMethod/\$e" = "/etc/profiles/per-user/ongyean/share/applications/fcitx5-wayland-launcher.desktop";
+      kwinrc."Tiling/1e786a63-2885-4ffa-82c1-57731b38f936/8ee4ecf8-cc64-491f-8b92-d9f2893b4480".padding =
+        4;
+      kwinrc."Tiling/1e786a63-2885-4ffa-82c1-57731b38f936/8ee4ecf8-cc64-491f-8b92-d9f2893b4480".tiles =
+        "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
+      kwinrc."Tiling/1e786a63-2885-4ffa-82c1-57731b38f936/b8b84c9f-6a8a-4b5f-ae67-c8acdbdce087"."[Tiling][5d473c46-b5b7-474d-8d76-e6383ff77518][]" =
+        "";
+      kwinrc."Tiling/1e786a63-2885-4ffa-82c1-57731b38f936/b8b84c9f-6a8a-4b5f-ae67-c8acdbdce087".padding =
+        4;
+      kwinrc."Tiling/1e786a63-2885-4ffa-82c1-57731b38f936/b8b84c9f-6a8a-4b5f-ae67-c8acdbdce087".tiles =
+        "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
+      kwinrc."Tiling/5d473c46-b5b7-474d-8d76-e6383ff77518/8ee4ecf8-cc64-491f-8b92-d9f2893b4480".padding =
+        4;
+      kwinrc."Tiling/5d473c46-b5b7-474d-8d76-e6383ff77518/8ee4ecf8-cc64-491f-8b92-d9f2893b4480".tiles =
+        "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
+      kwinrc."Tiling/5d473c46-b5b7-474d-8d76-e6383ff77518/b8b84c9f-6a8a-4b5f-ae67-c8acdbdce087".padding =
+        4;
+      kwinrc."Tiling/5d473c46-b5b7-474d-8d76-e6383ff77518/b8b84c9f-6a8a-4b5f-ae67-c8acdbdce087".tiles =
+        "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
+      kwinrc.Wayland."InputMethod/\$e" =
+        "/etc/profiles/per-user/ongyean/share/applications/fcitx5-wayland-launcher.desktop";
       kwinrc.Xwayland.Scale = 1.25;
       kwinrc."org.kde.kdecoration2".BorderSize = "None";
       kwinrc."org.kde.kdecoration2".BorderSizeAuto = false;
