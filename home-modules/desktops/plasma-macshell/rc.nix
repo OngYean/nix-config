@@ -1,6 +1,7 @@
 {
   programs.plasma = {
     enable = true;
+    overrideConfig = true;
     shortcuts = {
       ActivityManager.switch-to-activity-a43cfe45-1b43-470c-bff5-7b090d701407 = [ ];
       "KDE Keyboard Layout Switcher"."Switch keyboard layout to English (US)" = [ ];
@@ -324,8 +325,9 @@
       kcminputrc.Mouse.cursorTheme = "MacTahoe-cursors";
       kded5rc.Module-device_automounter.autoload = false;
       kdeglobals.General.AccentColor = "184,117,220";
+      kdeglobals.General.ColorScheme = "BreezeDark";
       kdeglobals.General.LastUsedCustomAccentColor = "184,117,220";
-      kdeglobals.General.Name = "noctalia";
+      # kdeglobals.General.Name = "Breeze Dark";
       kdeglobals.General.XftAntialias = true;
       kdeglobals.General.XftHintStyle = "hintslight";
       kdeglobals.General.XftSubPixel = "none";
@@ -418,12 +420,13 @@
       kwinrc."Tiling/5d473c46-b5b7-474d-8d76-e6383ff77518/8ee4ecf8-cc64-491f-8b92-d9f2893b4480".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
       kwinrc."Tiling/5d473c46-b5b7-474d-8d76-e6383ff77518/b8b84c9f-6a8a-4b5f-ae67-c8acdbdce087".padding = 4;
       kwinrc."Tiling/5d473c46-b5b7-474d-8d76-e6383ff77518/b8b84c9f-6a8a-4b5f-ae67-c8acdbdce087".tiles = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
-      kwinrc.Wayland."InputMethod[$e]" = "/etc/profiles/per-user/ongyean/share/applications/fcitx5-wayland-launcher.desktop";
+      kwinrc.Wayland."InputMethod/\$e" = "/etc/profiles/per-user/ongyean/share/applications/fcitx5-wayland-launcher.desktop";
       kwinrc.Xwayland.Scale = 1.25;
       kwinrc."org.kde.kdecoration2".BorderSize = "None";
       kwinrc."org.kde.kdecoration2".BorderSizeAuto = false;
       kwinrc."org.kde.kdecoration2".ButtonsOnLeft = "XIA_M";
       kwinrc."org.kde.kdecoration2".ButtonsOnRight = "";
+      kwinrc."org.kde.kdecoration2".library = "org.kde.klassy";
       kwinrc."org.kde.kdecoration2".theme = "Klassy";
       kxkbrc.Layout.DisplayNames = "";
       kxkbrc.Layout.LayoutList = "us";
