@@ -2,14 +2,15 @@
 
 let
   mkProtonGame = (import ../utils.nix args).mkProtonGame;
-in
-{
-  # Gather GLCache from all games in one place
-  home.sessionVariables = {
+  shaderCacheVariables = {
     __GL_SHADER_DISK_CACHE_PATH = "${config.home.homeDirectory}/.cache";
     __GL_SHADER_DISK_CACHE_SIZE = 12000000000;
     VKD3D_SHADER_CACHE_PATH = "${config.home.homeDirectory}/.cache";
   };
+in
+{
+  # Gather GLCache from all games in one place
+  home.sessionVariables = shaderCacheVariables;
 
   programs = {
     mangohud = {
@@ -104,7 +105,7 @@ in
         PROTON_ENABLE_WAYLAND=1;
         PROTON_DXVK_GPLASYNC=1; # Active when run with DX11
         VKD3D_CONFIG="force_static_cbv"; # Active when run with DX12
-      };
+      } // shaderCacheVariables;
     })
 
     (mkProtonGame {
