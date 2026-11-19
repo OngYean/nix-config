@@ -22,6 +22,7 @@ in
     darkly
     inputs.kwin-effects-glass.packages.${stdenv.hostPlatform.system}.default
     (callPackage ../../../pkgs/custom-icons {})
+    kde-rounded-corners
   ];
 
   gtk = {
