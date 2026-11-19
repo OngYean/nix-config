@@ -23,6 +23,7 @@
   fixed ? false, # default: false
   highDefinition ? false, # default: false
   roundedMaxWindow ? false, # default: false
+  windowRadius ? null, # default: 24px (26px with highDefinition)
   darkerColor ? false, # default: false
   smallerFont ? false, # default: false
   noShadow ? false, # default: false
@@ -148,6 +149,11 @@ in
 
       # Provides a dummy home directory
       substituteInPlace libs/lib-core.sh --replace-fail 'MY_HOME=$(getent passwd "''${MY_USERNAME}" | cut -d: -f6)' 'MY_HOME=/tmp'
+    '' + lib.optionalString (windowRadius != null) ''
+      # Window corner radius (all 4 corners); upstream has no install flag for it
+      substituteInPlace src/sass/_variables.scss --replace-fail \
+        "\$wm_radius: if(\$laptop == 'false', 26px, 24px);" \
+        "\$wm_radius: ${toString windowRadius}px;"
     '';
 
     dontConfigure = true;
